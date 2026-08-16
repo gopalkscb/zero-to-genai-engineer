@@ -10,6 +10,19 @@
 > into a **graph with cycles, persistent state, and a pause button** — which is exactly what
 > "agent" means once you stop hand-waving the word.
 
+> **Where this sits relative to S10f:** Module 10's Notebook 11 already used `create_agent` +
+> LangChain 1.0's `middleware=` system to add memory, `HumanInTheLoopMiddleware`,
+> `ModelRetryMiddleware`/`ModelFallbackMiddleware`, `Store`-backed long-term memory, and
+> `response_format=ProviderStrategy(schema=...)` structured output — all of that is real,
+> already built, and this module doesn't re-teach it. What `create_agent` + middleware
+> *doesn't* give you is custom, multi-step control flow specific to your own business logic —
+> there's no `RetrievalGradingMiddleware` or `QueryRewriteMiddleware`, because "grade this
+> retrieval, rewrite the query, try again, then escalate" isn't a generic concern any
+> off-the-shelf middleware could anticipate. That's a `StateGraph` you build yourself. This
+> module teaches the primitives (`interrupt()`, `Command`, `checkpointer`, `Store`) that both
+> `create_agent`'s middleware *and* the capstone's bespoke retry loop are built from — so you
+> can reach for a middleware when the concern is generic, and hand-build a graph when it isn't.
+
 ---
 
 ## What This Session Covers
@@ -28,8 +41,8 @@
 |------|--------------|
 | `notebooks/01_langgraph_fundamentals_and_agents.ipynb` | Graphs, state, conditional edges, tool-calling agents, memory, streaming |
 | `notebooks/02_human_in_the_loop_and_multi_agent.ipynb` | `interrupt()`-based approval flows, long-term memory, supervisor multi-agent pattern |
-| `notebooks/03_agentic_rag_capstone.ipynb` | **Flagship project** — Self-Correcting Agentic RAG, built on top of the Module 10 pipeline |
-| `capstone_agentic_rag/` | The capstone graph exported as a standalone Streamlit app |
+| `notebooks/03_agentic_rag_capstone.ipynb` | **Flagship project** — Self-Correcting Agentic RAG, built on top of the Module 10 pipeline, then hardened with the rest of the Module 10 toolkit |
+| `capstone_agentic_rag/` | The production graph (`graph.py`), a Streamlit app (`app.py`), and a no-API-key pytest suite (`tests/test_graph.py`) |
 
 ---
 
@@ -121,21 +134,29 @@ After every graph run, print the full state dict and — separately — call
 imagine what the graph looks like or what's in state; both are one line of code away, every
 single time.
 
-**5. HITL and memory are the payoff, not a bonus topic.**
-Don't teach `interrupt()` as an isolated feature. Tie it back to a real failure mode already
-established in S10 (Notebook 11 — "human-in-the-loop pauses before anything risky"): the
-capstone's `human_escalation` node is the *formal, resumable* version of the ad-hoc pause
-that session gestured at. Same for memory — S10's `ChatTurn` list was memory that dies when
-the process exits; a `checkpointer` is the same idea made durable and inspectable.
+**5. HITL and memory are the payoff, not a bonus topic — and be precise about what's genuinely new.**
+Don't teach `interrupt()` as if S10 never touched it — Notebook 11 (S10f) already built a
+full working `interrupt()` + `Command(resume=...)` approval flow via
+`HumanInTheLoopMiddleware`, and used `checkpointer=`/`Store` for memory on `create_agent`.
+Overclaiming novelty here is a fast way to lose credibility with students who just did that
+notebook. The honest framing: S10f showed the *packaged* version for a generic concern
+(approve-this-one-tool-call); S11 shows the *primitive* it's built from, applied to a
+decision no generic middleware could package — "we retried retrieval and generation and are
+still not confident, escalate to a human." Same precision for memory: `ProductionRAGChatbot`
+(Notebook 13 specifically, not all of S10) stored history in a plain `self.history` list that
+dies when the process exits — *that* comparison is fair game; S10f's own `checkpointer=`
+usage is not something to reinvent, only to point back to.
 
 **6. The capstone must extend prior work, not restart from a tutorial.**
 The flagship project (`03_agentic_rag_capstone.ipynb`) literally imports
 `HybridIndex`, `Reranker`, and the exact prompts from
 `10_RAG/notebooks/production_rag_chatbot/rag_pipeline.py`. Nothing about retrieval, fusion,
-or reranking is retaught — LangGraph's job in this session is *only* to add what a straight
-Python chain structurally cannot: retry loops, self-grading, and a human escape hatch.
-Students should leave seeing LangGraph as "the orchestration layer on top of what I already
-built," not a separate, disconnected framework.
+or reranking is retaught — LangGraph's job is to add what a straight Python chain
+structurally cannot (retry loops, self-grading, a human escape hatch), and to give the rest
+of Module 10's production concerns (RAGAS scoring, resilience, token budget, long-term
+memory, structured output) a place to live as real graph nodes instead of scattered
+standalone demos. Students should leave seeing LangGraph as "the orchestration layer on top
+of what I already built," not a separate, disconnected framework.
 
 **7. Assess with a trace, not just a final answer.**
 Because state and node transitions are fully inspectable, grade the *path* the agent took —
@@ -159,9 +180,11 @@ looks right. A correct answer reached by skipping the grading step is a bug, not
 
 ## Capstone — Self-Correcting Agentic RAG
 
-**The pitch:** everything Module 10 taught (hybrid retrieval, RRF fusion, cross-encoder
-reranking, a groundedness guardrail, condense-question memory) reused *as-is*, wrapped in a
-LangGraph agent that can now do what a straight pipeline never could:
+**The pitch:** the full Module 10 toolkit — hybrid retrieval, RRF fusion, cross-encoder
+reranking, the `min_rerank_score` guardrail, condense-question memory, RAGAS faithfulness
+scoring, token-budget trimming, long-term `Store` memory, resilient LLM calls, and structured
+output — reused, not re-taught (see the coverage map below for exactly where each one lives),
+wrapped in a LangGraph agent that can now do what a straight pipeline never could:
 
 ```
         ┌────────────┐
@@ -195,7 +218,45 @@ LangGraph agent that can now do what a straight pipeline never could:
                                              END
 ```
 
+The diagram above is the **core teaching graph**, built inline in the notebook so the
+self-correction mechanism is easy to follow line by line. `capstone_agentic_rag/graph.py`
+ships the **production version**: two more nodes up front (`trim_history`,
+`recall_preferences`) and several nodes hardened with the rest of what Module 10 taught — see
+the coverage map below for exactly what and where.
+
 Run it end to end in `notebooks/03_agentic_rag_capstone.ipynb`, then ship it as a chat app
 from `capstone_agentic_rag/` (`streamlit run app.py`) — including a live trace panel showing
 which nodes fired, how many retries happened, and why (if it happened) the agent handed off
 to a human instead of guessing.
+
+---
+
+## Coverage Map — Every Module 10 Tool, and Where It Lives Here
+
+An honest accounting, not a marketing claim: what's genuinely wired into the capstone, and
+what's a deliberate extension point rather than a re-implementation.
+
+| Module 10 tool / technique | Notebook it was taught in | Used in M11 how |
+|---|---|---|
+| Recursive chunking | S10b (Notebook 02) | Reused via `chunk_documents()`, imported unmodified |
+| Dense embeddings (bge-small) + Chroma | S10c (Notebooks 04/05) | Reused via `HybridIndex`, imported unmodified |
+| BM25 sparse retrieval | S10d (Notebook 06) | Reused via `HybridIndex`, imported unmodified |
+| RRF hybrid fusion | S10d (Notebook 07) | Reused via `HybridIndex.search()`, imported unmodified |
+| Cross-encoder reranking | S10d (Notebook 08) | Reused via `Reranker`, imported unmodified |
+| `min_rerank_score` guardrail | Notebook 13 (`ProductionRAGChatbot`) | `grade_documents()` — fast heuristic pre-filter before the LLM judge |
+| **RAGAS Faithfulness** | S10e (Notebook 09) | `check_groundedness()` — the actual metric, scored live per turn, not just offline (falls back to an LLM-judge prompt if `ragas` isn't installed) |
+| Condense-question memory | Notebook 13 (`ProductionRAGChatbot`) | `condense()` — same prompt, reading graph state instead of a `self.history` list |
+| Short-term memory (checkpointer) | S10f (Notebook 11, §3–4) | `builder.compile(checkpointer=...)` — the same primitive `create_agent(checkpointer=...)` uses |
+| Token-budget trimming | S10f (Notebook 11, §5b) | `trim_history()` — same `RemoveMessage(id=REMOVE_ALL_MESSAGES)` pattern, applied by hand |
+| Long-term memory (`Store`) | S10f (Notebook 11, §6) | `recall_preferences()` + `remember_answer_style()` — same `Store`, a plain key instead of semantic search |
+| Resilience (retry/fallback) | S10f (Notebook 11, §10) | `resilient_invoke()` — the same idea as `ModelRetryMiddleware`, applied manually since these are bare `StateGraph` nodes |
+| Structured output | S10f (Notebook 11, §11) | `extract_structured_citations()` — `llm.with_structured_output()`, the same idea as `response_format=ProviderStrategy(schema=...)` |
+| Human-in-the-loop | S10f (Notebook 11, §9) | `human_escalation()` — the same `interrupt()`/`Command(resume=...)` primitive, applied to a decision no prebuilt middleware covers |
+| Observability | S10f (Notebook 11, §12) | Same pattern documented (3 `LANGSMITH_*` env vars, zero code change) — works identically for a `StateGraph`, not just `create_agent`; the Streamlit trace panel is this module's practical stand-in when LangSmith isn't configured |
+| Testing | S10f (Notebook 11, §13) | `capstone_agentic_rag/tests/test_graph.py` — the same trajectory-assertion philosophy, extended to test retry counts and routing decisions directly |
+| DeepEval | S10e (Notebook 10) | **Extension point, not implemented.** RAGAS alone covers the same "automated grounding check" teaching point; adding both would duplicate, not add, coverage |
+| FAISS · Pinecone | S10c (Notebook 05) | **Extension point.** `HybridIndex` uses Chroma; swapping the vector store is a `rag_pipeline.py` change, not an M11 one |
+| SPLADE | S10d (Notebook 06) | **Extension point.** BM25 is the sparse half of `HybridIndex`; SPLADE is a documented alternative, not additive here |
+| FlashRank / Cohere rerank | S10d (Notebook 08) | **Extension point.** The cross-encoder reranker is what `ProductionRAGChatbot` ships with; swapping rerankers doesn't change anything about the *graph* |
+| Multimodal RAG (images) | Notebook 15 | **Out of scope.** A text-document capstone; multimodal retrieval is its own project |
+| MCP agents | Notebook 16 | **Out of scope.** That notebook is already its own capstone in `10_RAG/`; duplicating it here would be redundant, not additive |

@@ -24,3 +24,5 @@ sentence-transformers
 bm25s
 PyStemmer
 chromadb
+ragas          # RAGAS Faithfulness in check_groundedness() -- optional, has an LLM-judge fallback
+pytest         # ../capstone_agentic_rag/tests/test_graph.py

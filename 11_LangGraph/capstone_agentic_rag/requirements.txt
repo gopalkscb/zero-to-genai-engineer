@@ -18,5 +18,7 @@ sentence-transformers
 bm25s
 PyStemmer
 chromadb
+ragas          # check_groundedness() -- optional: falls back to an LLM-judge prompt if missing
+pytest         # tests/test_graph.py
 python-dotenv
 numpy<2
