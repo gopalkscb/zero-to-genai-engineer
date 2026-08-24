@@ -515,8 +515,10 @@ S11c  Multi-agent orchestrator  required
   ├── S11d  Reasoning patterns  bonus (interview map)
   ├── S11e  SQL agent           bonus (Chinook)
   ├── capstone_agentic_rag/     optional self-correcting RAG
-  └── medium-article-agent/     optional FastAPI + React  → https://github.com/nursnaaz/medium-article-agent
+  └── medium-article-agent/     optional FastAPI + React
 ```
+
+Install: [local README](./medium-article-agent/README.md) (Python **3.12**, Node 18+) or clone [nursnaaz/medium-article-agent](https://github.com/nursnaaz/medium-article-agent). Same code.
 
 | Day | Open | What you do | Time | Slides |
 |---|---|---|---|---|

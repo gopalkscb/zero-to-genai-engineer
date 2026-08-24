@@ -184,7 +184,7 @@ Ingest PDF / PPTX / HTML / notebooks → draft → parallel reviewers → HITL �
 
 **Standalone repo (clone this for the portfolio):** [nursnaaz/medium-article-agent](https://github.com/nursnaaz/medium-article-agent)
 
-Same code in this course at [`../medium-article-agent/`](../medium-article-agent/).
+Same code in this course at [`../medium-article-agent/`](../medium-article-agent/). Install, Docker, and deploy: that folder's [README](../medium-article-agent/README.md) (Python **3.12+**, Node 18+, `OPENAI_API_KEY`). It does not use the S11 notebook env.
 
 ---
 

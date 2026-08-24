@@ -60,4 +60,14 @@ def get_model_for_stage(stage: Stage, settings: Settings | None = None) -> str:
         "quiz": settings.model_quiz,
         "image": settings.model_image,
     }
+
+    # Bedrock: .env.example's BEDROCK_MODEL_* IDs win over the OpenAI MODEL_* defaults.
+    # Plan uses BEDROCK_MODEL_PLAN; other text stages use BEDROCK_MODEL_DRAFT.
+    # Image stays on MODEL_IMAGE (Bedrock image gen is not implemented).
+    if settings.llm_provider == "bedrock" and stage != "image":
+        if stage == "plan" and settings.bedrock_model_plan:
+            return settings.bedrock_model_plan
+        if settings.bedrock_model_draft:
+            return settings.bedrock_model_draft
+
     return mapping.get(stage, settings.model_draft)
