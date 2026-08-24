@@ -114,6 +114,21 @@ Do **not** move `notebooks/production_*` — Session 11 imports them by this pat
 
 ## 🖥️ Run the apps
 
+<p align="center">
+  <img src="notebooks/production_rag_chatbot/docs/screenshots/app.png" alt="Production RAG Chatbot" width="920">
+</p>
+<p align="center"><em>Notebook 13 — hybrid retrieval, rerank, cited answers.</em></p>
+
+<p align="center">
+  <img src="notebooks/production_rag_chatbot_memory/docs/screenshots/app.png" alt="Production RAG Chatbot + Memory" width="920">
+</p>
+<p align="center"><em>Notebook 14 — the same engine, plus durable short-term and long-term memory.</em></p>
+
+<p align="center">
+  <img src="capstone_rag_studio/docs/screenshots/app.png" alt="RAG Studio Ingest" width="920">
+</p>
+<p align="center"><em>RAG Studio — swap every RAG stage, then compare and evaluate. See the [project README](capstone_rag_studio/README.md) for Chat, Strategies, and Eval shots.</em></p>
+
 ```bash
 # After notebook 13
 cd 10_RAG/notebooks/production_rag_chatbot && streamlit run app.py

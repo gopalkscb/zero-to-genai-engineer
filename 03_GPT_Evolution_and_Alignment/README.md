@@ -46,6 +46,11 @@ Text Prediction (GPT-1) → Scale (GPT-2 → GPT-3) → Alignment (RLHF → CAI 
 
 Then optionally [`holmes_gpt_ui.py`](holmes_gpt_ui.py) and the [`paper_summaries/`](paper_summaries/) notebooks.
 
+<p align="center">
+  <img src="docs/screenshots/app.png" alt="Holmes GPT Streamlit app — temperature, top-k, and prompt" width="920">
+</p>
+<p align="center"><em>Holmes GPT — the mini GPT you trained on Sherlock Holmes. Set temperature / top-k, pick an example prompt, and stream tokens.</em></p>
+
 ---
 
 ## 📁 Folder Structure

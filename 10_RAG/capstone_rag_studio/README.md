@@ -16,6 +16,26 @@ Options_Catalog, so you can define named **strategy variants** and compare them
 side by side on the same question, with governance-aware access control, tracing,
 and RAGAS/DeepEval evaluation built in.
 
+<p align="center">
+  <img src="docs/screenshots/app.png" alt="RAG Studio Ingest — upload documents and set access level" width="920">
+</p>
+<p align="center"><em>Ingest — upload files, pick an access level, then build an index for a saved variant.</em></p>
+
+<p align="center">
+  <img src="docs/screenshots/strategies.png" alt="RAG Studio Build Strategies — compose a named pipeline variant" width="920">
+</p>
+<p align="center"><em>Build Strategies — swap chunker, embeddings, retrieval, reranker, and generator from the live catalog.</em></p>
+
+<p align="center">
+  <img src="docs/screenshots/chat.png" alt="RAG Studio Chat — variant picker and grounded conversation" width="920">
+</p>
+<p align="center"><em>Chat — pick a variant and ask questions grounded in the ingested docs.</em></p>
+
+<p align="center">
+  <img src="docs/screenshots/eval.png" alt="RAG Studio Evaluation Dashboard — RAGAS golden-set scoring" width="920">
+</p>
+<p align="center"><em>Evaluation Dashboard — score a golden set with RAGAS or DeepEval (faithfulness, answer relevancy, retrieval ablation).</em></p>
+
 The project has three tiers:
 
 1. **`rag/`** — a transport-agnostic Python package with no FastAPI/React dependency.

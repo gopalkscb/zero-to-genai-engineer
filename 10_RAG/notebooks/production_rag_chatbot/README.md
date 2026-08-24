@@ -2,6 +2,11 @@
 
 Streamlit app built in **Notebook 13**. Uses `rag_pipeline.py` (`HybridIndex` + `Reranker` + grounded generation).
 
+<p align="center">
+  <img src="docs/screenshots/app.png" alt="Production RAG Chatbot — upload, chunking sliders, and build index" width="920">
+</p>
+<p align="center"><em>Drop in a PDF, tune chunk size / hybrid top-k / rerank, then ask for cited answers.</em></p>
+
 Session 11's self-correcting RAG **imports this package unmodified** — do not rename or move this folder.
 
 ```bash

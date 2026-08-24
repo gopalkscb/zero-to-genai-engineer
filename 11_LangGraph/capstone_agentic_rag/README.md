@@ -10,6 +10,11 @@
 
 Day 3 (required) is the [helpdesk orchestrator](../notebooks/03_multi_agent_orchestrator.ipynb). This folder is a **side project**.
 
+<p align="center">
+  <img src="docs/screenshots/app.png" alt="Self-Correcting Agentic RAG Streamlit app with knowledge-base sidebar and chat" width="920">
+</p>
+<p align="center"><em>Upload a document, chat over it, and watch the graph grade, rewrite, and escalate. Answer style lives in the long-term Store.</em></p>
+
 The teaching notebook for *this* single-agent RAG graph lives at
 [`self_correcting_rag.ipynb`](self_correcting_rag.ipynb). The graph is exported as
 `graph.py` and wrapped in a Streamlit chat app (`app.py`).

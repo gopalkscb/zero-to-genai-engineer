@@ -153,6 +153,11 @@ python3 -m streamlit run app.py
 
 Optional IDE: `langgraph dev` (opens LangGraph Studio). Full notes: [`multi_agent_orchestrator/README.md`](multi_agent_orchestrator/README.md).
 
+<p align="center">
+  <img src="multi_agent_orchestrator/docs/screenshots/app.png" alt="Helpdesk orchestrator Streamlit UI" width="920">
+</p>
+<p align="center"><em>Day 3 app — hierarchical teams, RAG + SQL over MCP, writes that pause for you.</em></p>
+
 Try: *“What is our refund policy?”* · *“How many open tickets does Jane Doe have?”* · *“Add a note that we offered a refund”* (then type **yes** or **no**).
 
 ### Optional — Self-correcting Agentic RAG
@@ -176,6 +181,11 @@ pip install -r requirements.txt
 streamlit run app.py
 pytest tests/test_graph.py -v     # no API key — fakes LLM + retriever
 ```
+
+<p align="center">
+  <img src="capstone_agentic_rag/docs/screenshots/app.png" alt="Self-Correcting Agentic RAG Streamlit UI" width="920">
+</p>
+<p align="center"><em>Grade → rewrite → groundedness loop, with a human pause when retries run out.</em></p>
 
 ### Optional — Medium article agent
 

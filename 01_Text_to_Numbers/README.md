@@ -18,6 +18,11 @@ Every Generative AI system you build — RAG, agents, chatbots — depends on th
 2. [`notebooks/02_cosine_similarity.ipynb`](notebooks/02_cosine_similarity.ipynb) — why cosine similarity
 3. Optional: [`movie_recommender/`](movie_recommender/) — FastAPI + React
 
+<p align="center">
+  <img src="movie_recommender/ReactApp.png" alt="CineMatch movie recommendations" width="920">
+</p>
+<p align="center"><em>CineMatch — five embedders, same 1,000 movies. Full setup in the [app README](movie_recommender/README.md).</em></p>
+
 ```text
 01_Text_to_Numbers/
 ├── README.md

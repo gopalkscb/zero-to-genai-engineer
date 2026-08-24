@@ -26,6 +26,11 @@
 
 Open [`notebooks/NB1_multi_provider_api_calls.ipynb`](notebooks/NB1_multi_provider_api_calls.ipynb), then NB2–NB6 as labelled in the folder tree below. Distill is the Day 2 product.
 
+<p align="center">
+  <img src="distill/docs/screenshots/app.png" alt="Distill transcript upload screen" width="920">
+</p>
+<p align="center"><em>Distill — paste a class transcript, get a concept map and an adaptive quiz. See [`distill/README.md`](distill/README.md).</em></p>
+
 ---
 
 ## What This Session Covers

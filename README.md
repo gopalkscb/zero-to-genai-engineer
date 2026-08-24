@@ -564,6 +564,55 @@ Try: *“What is our refund policy?”* · *“How many open tickets does Jane D
 | **[Holmes GPT](./03_GPT_Evolution_and_Alignment/holmes_gpt_ui.py)** | S03 | PyTorch, Streamlit | A GPT you trained yourself |
 | **[Bullish Stock Scanner V3](https://github.com/nursnaaz/TechnicalStockPrediction/tree/feature/v3-high-precision)** | S09 | FastAPI, React, 308 tests | Spec-driven loop engineering, outside this repo |
 
+### What they look like
+
+Live captures of the apps in this repo (same style as the [Medium article agent](https://github.com/nursnaaz/medium-article-agent) README). Click a screenshot to open that project.
+
+<p align="center">
+  <a href="./11_LangGraph/multi_agent_orchestrator/"><img src="./11_LangGraph/multi_agent_orchestrator/docs/screenshots/app.png" alt="Helpdesk Orchestrator" width="920"></a>
+</p>
+<p align="center"><em><a href="./11_LangGraph/multi_agent_orchestrator/">Helpdesk Orchestrator</a> — supervisor routes RAG, web, SQL, and ticket writes that pause for you.</em></p>
+
+<p align="center">
+  <a href="./11_LangGraph/capstone_agentic_rag/"><img src="./11_LangGraph/capstone_agentic_rag/docs/screenshots/app.png" alt="Self-Correcting Agentic RAG" width="920"></a>
+</p>
+<p align="center"><em><a href="./11_LangGraph/capstone_agentic_rag/">Self-Correcting Agentic RAG</a> — grade, rewrite, RAGAS, escalate.</em></p>
+
+<p align="center">
+  <a href="https://github.com/nursnaaz/medium-article-agent"><img src="https://raw.githubusercontent.com/nursnaaz/medium-article-agent/main/docs/screenshots/agent.png" alt="Medium Article Agent graph" width="920"></a>
+</p>
+<p align="center"><em><a href="https://github.com/nursnaaz/medium-article-agent">Medium Article Agent</a> — 23-node editorial graph (separate repo).</em></p>
+
+<p align="center">
+  <a href="./10_RAG/capstone_rag_studio/"><img src="./10_RAG/capstone_rag_studio/docs/screenshots/app.png" alt="RAG Studio" width="920"></a>
+</p>
+<p align="center"><em><a href="./10_RAG/capstone_rag_studio/">RAG Studio</a> — ingest, swap strategies, chat, evaluate.</em></p>
+
+<p align="center">
+  <a href="./10_RAG/notebooks/production_rag_chatbot/"><img src="./10_RAG/notebooks/production_rag_chatbot/docs/screenshots/app.png" alt="Production RAG chatbot" width="920"></a>
+</p>
+<p align="center"><em><a href="./10_RAG/notebooks/production_rag_chatbot/">Production RAG chatbot</a> — hybrid retrieval + rerank + cited answers.</em></p>
+
+<p align="center">
+  <a href="./10_RAG/notebooks/production_rag_chatbot_memory/"><img src="./10_RAG/notebooks/production_rag_chatbot_memory/docs/screenshots/app.png" alt="RAG chatbot + memory" width="920"></a>
+</p>
+<p align="center"><em><a href="./10_RAG/notebooks/production_rag_chatbot_memory/">RAG chatbot + memory</a> — same engine, durable conversation memory.</em></p>
+
+<p align="center">
+  <a href="./05_Local_LLMs_and_API_Providers/distill/"><img src="./05_Local_LLMs_and_API_Providers/distill/docs/screenshots/app.png" alt="Distill" width="920"></a>
+</p>
+<p align="center"><em><a href="./05_Local_LLMs_and_API_Providers/distill/">Distill</a> — transcript in, concept map + adaptive quiz out.</em></p>
+
+<p align="center">
+  <a href="./01_Text_to_Numbers/movie_recommender/"><img src="./01_Text_to_Numbers/movie_recommender/ReactApp.png" alt="CineMatch" width="920"></a>
+</p>
+<p align="center"><em><a href="./01_Text_to_Numbers/movie_recommender/">CineMatch</a> — five embedders on the same 1,000 movies.</em></p>
+
+<p align="center">
+  <a href="./03_GPT_Evolution_and_Alignment/holmes_gpt_ui.py"><img src="./03_GPT_Evolution_and_Alignment/docs/screenshots/app.png" alt="Holmes GPT" width="920"></a>
+</p>
+<p align="center"><em><a href="./03_GPT_Evolution_and_Alignment/holmes_gpt_ui.py">Holmes GPT</a> — a GPT you trained yourself, streaming one token at a time.</em></p>
+
 ---
 
 ## 🎮 Classroom presentations

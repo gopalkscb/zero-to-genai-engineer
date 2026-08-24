@@ -10,6 +10,11 @@
 
 Built in [`../notebooks/03_multi_agent_orchestrator.ipynb`](../notebooks/03_multi_agent_orchestrator.ipynb). Does **not** rebuild retrieval — it starts the Session 10 MCP server and splits its tools across specialists.
 
+<p align="center">
+  <img src="docs/screenshots/app.png" alt="Helpdesk orchestrator — Streamlit chat with thread_id, answer style, and LangSmith tracing" width="920">
+</p>
+<p align="center"><em>Pick a <code>thread_id</code>, ask the helpdesk, and watch writes pause for a yes/no. LangSmith traces the supervisors and tools.</em></p>
+
 ```text
 top_supervisor
   ├── knowledge_team  → rag_agent (search_knowledge_base) + search_agent (web)
