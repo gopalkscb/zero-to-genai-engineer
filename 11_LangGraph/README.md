@@ -41,6 +41,8 @@ pip install -r requirements.txt
 
 Then open [`notebooks/01_langgraph_fundamentals_and_agents.ipynb`](notebooks/01_langgraph_fundamentals_and_agents.ipynb).
 
+**Browser labs:** [ReAct, one tool](https://nursnaaz.github.io/tutorial/one-tool-one-loop) · [Human in the loop](https://nursnaaz.github.io/tutorial/human-in-the-loop) · [MCP as USB](https://nursnaaz.github.io/tutorial/mcp-as-usb) · [Securing agents](https://nursnaaz.github.io/tutorial/secured-agents)
+
 Class slides: [all decks](https://nursnaaz.github.io/zero-to-genai-engineer/). Each day also has a link in the table below. Day 3 is the notebook + Streamlit app.
 
 ---

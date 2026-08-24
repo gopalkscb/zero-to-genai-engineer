@@ -60,6 +60,7 @@ New sessions drop every **Saturday / Sunday**. Star the repo to get notified. Qu
 | **On RAG + memory (S10)** | [`10_RAG/README.md`](./10_RAG/). Notebooks **01–12** are required. **11, 13, and 14** are the chatbot / memory track. |
 | **On LangGraph (S11)** | [`11_LangGraph/README.md`](./11_LangGraph/). Notebooks **01–03** required; **04–05** are bonus. |
 | **Want the slides** | [Class presentations](https://nursnaaz.github.io/zero-to-genai-engineer/). Open those links. Clicking the `.html` in GitHub just shows source. |
+| **Want a browser lab** | [nursnaaz.github.io](https://nursnaaz.github.io/). Direct URLs are listed under each session below. No API key. |
 | **Caught up through S11** | Ship something from [Projects](#-projects-you-can-ship). Chatbot memory is already in S10. |
 
 Beginner notebooks (no install):
@@ -111,7 +112,7 @@ Every weekend is notebooks you actually run. Most also leave you with an app, a 
 | Beginner paper-summary notebooks | **11** | [`03_GPT_Evolution_and_Alignment/paper_summaries/`](./03_GPT_Evolution_and_Alignment/paper_summaries/) |
 | Classroom HTML decks | **19** | S03 papers (1) · S08 recap (2) · S10 (12) · S11 (4) |
 | PDF slide decks | S00 (3) · S01 (1) · S02 (1) · S05 (`slides.pdf`) | Each session's `slides/` |
-| Interactive browser tutorials | **5** | [nursnaaz.github.io](https://nursnaaz.github.io) |
+| Interactive browser tutorials | **25** | [nursnaaz.github.io](https://nursnaaz.github.io) — deep links next to each session |
 | Student group RAG datasets | **9 companies** | [`10_RAG/student_group_datasets/`](./10_RAG/student_group_datasets/) |
 | Shippable apps in this repo | **10** | See [Projects](#-projects-you-can-ship) |
 
@@ -231,7 +232,7 @@ Also: [`prereq/cheatsheet.md`](./prereq/cheatsheet.md) — keep it open during S
 
 **Slides:** [GenAI intro](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_genai_intro.pdf) · [How search works](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_how_search_engine_works.pdf) · [Claude Code leak](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_claude_code_leak_summary.pdf)
 
-**Browser:** [How Search Engines Work](https://nursnaaz.github.io/) (start it from that homepage, ~45 min)
+**Browser:** [How Search Engines Work](https://nursnaaz.github.io/tutorial/how-search-engines-work) (~45 min, no API key)
 
 No API key. Pure Python.
 
@@ -251,7 +252,7 @@ No API key. Pure Python.
 **Assignments:** Medium article on the 5 methods · Medium article cosine vs Euclidean · product recommender (Amazon descriptions).
 
 **Slides:** [Text to Numbers](https://nursnaaz.github.io/zero-to-genai-engineer/01_Text_to_Numbers/slides/M00-S01.pdf)  
-**Browser:** [Cosine Similarity & Movie Recommender](https://nursnaaz.github.io/) (start it from that homepage)
+**Browser:** [Cosine Similarity & Movie Recommender](https://nursnaaz.github.io/tutorial/cosine-similarity-movie-recommender)
 
 ---
 
@@ -270,9 +271,9 @@ Do these in the browser before the notebook:
 
 | Tutorial | Time |
 |---|---|
-| [Self-Attention](https://nursnaaz.github.io/) | 30 min |
-| [Positional Encoding](https://nursnaaz.github.io/) | 35 min |
-| [Multi-Head Attention](https://nursnaaz.github.io/) | 60 min |
+| [Self-Attention](https://nursnaaz.github.io/tutorial/self-attention) | 30 min |
+| [Positional Encoding](https://nursnaaz.github.io/tutorial/positional-encoding) | 35 min |
+| [Multi-Head Attention](https://nursnaaz.github.io/tutorial/multi-head-attention) | 60 min |
 
 **Assets:** `SelfAttentionFull.mp4` · attention GIF · architecture spreadsheet.
 
@@ -324,6 +325,8 @@ Summaries: [`paper_summaries/`](./03_GPT_Evolution_and_Alignment/paper_summaries
 | NB1 | [BPE Tokenization](./04_BPE_Temperature_Top_K_Top_P/notebooks/NB1_BPE_Tokenization.ipynb) | `build_bpe_vocab()` · `tokenize_with_bpe()` · tiktoken GPT-2 vs GPT-4 | 45 min |
 | NB2 | [Temperature / Top-K / Top-P](./04_BPE_Temperature_Top_K_Top_P/notebooks/NB2_Temperature_TopK_TopP.ipynb) | `apply_temperature()` · filters · Gemini experiments · `sample_token()` in the correct order | 45 min |
 
+**Browser (do these before the Excel / notebooks):** [Tokens / BPE](https://nursnaaz.github.io/tutorial/tokens-are-money) · [Temperature, top-k, top-p](https://nursnaaz.github.io/tutorial/sampling-temperature-topk-topp) · [Context window budget](https://nursnaaz.github.io/tutorial/context-window-budget)
+
 **Order that matters:** temperature → top-K → top-P → sample. Getting this wrong is a common production bug.
 
 ---
@@ -344,6 +347,8 @@ Summaries: [`paper_summaries/`](./03_GPT_Evolution_and_Alignment/paper_summaries
 **Demos:** [`apps/multi_provider_race.py`](./05_Local_LLMs_and_API_Providers/apps/multi_provider_race.py) · [`apps/map_reduce_demo.py`](./05_Local_LLMs_and_API_Providers/apps/map_reduce_demo.py)
 
 **Portfolio:** [Distill](./05_Local_LLMs_and_API_Providers/distill/) — FastAPI + React + Whisper classroom tool ([contribute](https://github.com/nursnaaz/distill/blob/main/CONTRIBUTING.md)).
+
+**Browser:** [Your first LLM call](https://nursnaaz.github.io/tutorial/first-llm-call) · [Local vs cloud](https://nursnaaz.github.io/tutorial/local-vs-cloud)
 
 **Slides:** [S05 session PDF](https://nursnaaz.github.io/zero-to-genai-engineer/05_Local_LLMs_and_API_Providers/slides.pdf)
 
@@ -369,6 +374,8 @@ Benchmark used throughout: **ATIS** airline-intent (26 classes).
 | [`dspy_training.ipynb`](./06_Prompt_Engineering_DSPY_GEPA_COT/dspy_training.ipynb) | Cloud — all four optimisers |
 | [`dspy_training_ollama.ipynb`](./06_Prompt_Engineering_DSPY_GEPA_COT/dspy_training_ollama.ipynb) | Local, no API key |
 
+**Browser (before DSPy):** [Zero-shot / few-shot / CoT](https://nursnaaz.github.io/tutorial/prompt-anatomy) · [JSON or bust](https://nursnaaz.github.io/tutorial/json-or-bust)
+
 ---
 
 ### S07 — LangChain Fundamentals
@@ -380,6 +387,8 @@ Benchmark used throughout: **ATIS** airline-intent (26 classes).
 | [langchain_claude_openai_gemini_ollama_stream.ipynb](./07_LangChain_Notebooks/langchain_claude_openai_gemini_ollama_stream.ipynb) | Unified chat · `ChatPromptTemplate` · `MessagesPlaceholder` · `InMemoryChatMessageHistory` · `.stream()` · LCEL `\|` pipes | 60 min |
 
 Providers in the same notebook: `gpt-4o-mini` · Claude Haiku · Gemini Flash-Lite · Ollama `llama3.2` / `qwen2.5`.
+
+**Browser:** [Chatbots forget](https://nursnaaz.github.io/tutorial/chatbots-forget) (why you must send the message list) · [First LLM call](https://nursnaaz.github.io/tutorial/first-llm-call)
 
 ---
 
@@ -407,6 +416,8 @@ Visual pass of the MISSING chain before agentic coding.
 | [`LOOP_ENGINEERING_PLAYBOOK.md`](./09_AgenticCoding_LoopEngineering/loop_demo/LOOP_ENGINEERING_PLAYBOOK.md) | **20+ exercises** |
 | [`LoopEngineering.md`](./09_AgenticCoding_LoopEngineering/loop_demo/LoopEngineering.md) | Theory |
 
+**Browser:** [ReAct with a calculator](https://nursnaaz.github.io/tutorial/one-tool-one-loop) — thought → tool → observation → stop.
+
 **Demo (external):** [Bullish Stock Scanner V3](https://github.com/nursnaaz/TechnicalStockPrediction/tree/feature/v3-high-precision). FastAPI + React, 308 tests, built through spec-driven loops.
 
 ---
@@ -418,6 +429,8 @@ Visual pass of the MISSING chain before agentic coding.
 > Memory & chatbots (M06) live here too: short-term memory, summarisation, long-term `Store`, condense-question, streaming, guardrails, and HITL are in **S10f + notebooks 13–14**.
 
 **Start page:** [`10_RAG/README.md`](./10_RAG/) · notebook index: [`10_RAG/notebooks/README.md`](./10_RAG/notebooks/)
+
+**Browser:** [Tiny RAG](https://nursnaaz.github.io/tutorial/tiny-rag) · [Chunking](https://nursnaaz.github.io/tutorial/chunking-intuition) · [Hybrid + RRF](https://nursnaaz.github.io/tutorial/hybrid-search-rrf) · [Citations / refusals](https://nursnaaz.github.io/tutorial/citations-and-refusals) · [RAG injection](https://nursnaaz.github.io/tutorial/rag-injection-guardrails) · [Chat memory](https://nursnaaz.github.io/tutorial/chatbots-forget)
 
 ```text
 S10a  Why RAG
@@ -508,6 +521,8 @@ Every group ships a cited, refusal-aware support bot and **8 ablation tables** (
 > **MISSING from S10:** `ProductionRAGChatbot.chat()` is a **straight line**. It cannot retry retrieval, rewrite a vague question, or pause for a human. LangGraph is that control flow.
 
 **Start page:** [`11_LangGraph/README.md`](./11_LangGraph/) · notebooks: [`notebooks/README.md`](./11_LangGraph/notebooks/)
+
+**Browser:** [ReAct](https://nursnaaz.github.io/tutorial/one-tool-one-loop) · [HITL](https://nursnaaz.github.io/tutorial/human-in-the-loop) · [MCP](https://nursnaaz.github.io/tutorial/mcp-as-usb)
 
 ```text
 S11a  Fundamentals & agents     required
@@ -619,7 +634,7 @@ Live captures of the apps in this repo (same style as the [Medium article agent]
 
 GitHub's file view shows HTML source, not slides. Use the links below, or the [full index](https://nursnaaz.github.io/zero-to-genai-engineer/).
 
-S00–S02 also have interactive tutorials on [nursnaaz.github.io](https://nursnaaz.github.io). Open those from the homepage.
+S00–S11 browser labs (no API key) live on [nursnaaz.github.io](https://nursnaaz.github.io). Deep-link each one from the session sections above (for example [Tiny RAG](https://nursnaaz.github.io/tutorial/tiny-rag), [Self-attention](https://nursnaaz.github.io/tutorial/self-attention)).
 
 | Session | Presentation |
 |---|---|

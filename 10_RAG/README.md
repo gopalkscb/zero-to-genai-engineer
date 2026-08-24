@@ -36,6 +36,8 @@ pip install -r requirements.txt
 
 Then open [Notebook 01](notebooks/01_why_rag_the_case_for_retrieval.ipynb) or the [Why RAG slides](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_01_why_rag.html).
 
+**Browser labs (no API key, do these next to the matching notebook):** [Tiny RAG](https://nursnaaz.github.io/tutorial/tiny-rag) · [Chunking](https://nursnaaz.github.io/tutorial/chunking-intuition) · [Hybrid + RRF](https://nursnaaz.github.io/tutorial/hybrid-search-rrf) · [Citations and refusals](https://nursnaaz.github.io/tutorial/citations-and-refusals) · [RAG injection](https://nursnaaz.github.io/tutorial/rag-injection-guardrails) · [Chatbots forget](https://nursnaaz.github.io/tutorial/chatbots-forget)
+
 Every notebook: [`notebooks/README.md`](notebooks/README.md).
 
 ---

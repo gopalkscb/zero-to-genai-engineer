@@ -18,6 +18,8 @@ By the end of this session, you will understand the engine that sat beneath Goog
 
 Open [`notebooks/01_search_engine.ipynb`](notebooks/01_search_engine.ipynb) (Colab badge below, or local Jupyter). Then notebook 02.
 
+**Browser lab:** [How Search Engines Work](https://nursnaaz.github.io/tutorial/how-search-engines-work) (~45 min). Do this before or with notebook 01.
+
 ```text
 00_How_Search_Engine_Works/
 ├── README.md          ← you are here

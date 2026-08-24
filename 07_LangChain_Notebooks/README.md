@@ -14,6 +14,8 @@
 
 ## Start here
 
+**Browser:** [Chatbots forget](https://nursnaaz.github.io/tutorial/chatbots-forget) · [First LLM call](https://nursnaaz.github.io/tutorial/first-llm-call)
+
 Open [`langchain_claude_openai_gemini_ollama_stream.ipynb`](langchain_claude_openai_gemini_ollama_stream.ipynb). You need at least one provider key (Gemini free tier is enough) **or** a running Ollama model.
 
 ```text

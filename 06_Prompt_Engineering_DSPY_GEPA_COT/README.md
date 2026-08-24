@@ -14,6 +14,8 @@
 
 ## Start here
 
+**Browser (before DSPy):** [Zero-shot / few-shot / CoT](https://nursnaaz.github.io/tutorial/prompt-anatomy) · [JSON or bust](https://nursnaaz.github.io/tutorial/json-or-bust)
+
 ```bash
 pip install -r requirements.txt
 # then open dspy_training.ipynb  (or dspy_training_ollama.ipynb for local-only)

@@ -24,6 +24,8 @@
 
 ## Start here
 
+**Browser:** [Your first LLM call](https://nursnaaz.github.io/tutorial/first-llm-call) · [Local vs cloud](https://nursnaaz.github.io/tutorial/local-vs-cloud)
+
 Open [`notebooks/NB1_multi_provider_api_calls.ipynb`](notebooks/NB1_multi_provider_api_calls.ipynb), then NB2–NB6 as labelled in the folder tree below. Distill is the Day 2 product.
 
 <p align="center">

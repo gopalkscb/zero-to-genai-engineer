@@ -12,6 +12,8 @@
 
 ## Start here
 
+**Browser:** [ReAct with a calculator](https://nursnaaz.github.io/tutorial/one-tool-one-loop)
+
 1. Read [`AGENTIC_CODING_GUIDE.md`](AGENTIC_CODING_GUIDE.md)
 2. Then [`loop_demo/LOOP_ENGINEERING_PLAYBOOK.md`](loop_demo/LOOP_ENGINEERING_PLAYBOOK.md)
 

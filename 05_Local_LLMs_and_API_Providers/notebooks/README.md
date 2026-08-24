@@ -9,4 +9,4 @@
 | NB5 | [NB5_LMStudio_Local_Setup.ipynb](NB5_LMStudio_Local_Setup.ipynb) | LM Studio |
 | NB6 | [NB6_Databricks_Endpoint.ipynb](NB6_Databricks_Endpoint.ipynb) | Databricks |
 
-Apps: [`../apps/`](../apps/). Product: [`../distill/`](../distill/). ← [Session 05](../README.md)
+Apps: [`../apps/`](../apps/). Product: [`../distill/`](../distill/). Browser: [First LLM call](https://nursnaaz.github.io/tutorial/first-llm-call) · [Local vs cloud](https://nursnaaz.github.io/tutorial/local-vs-cloud). ← [Session 05](../README.md)

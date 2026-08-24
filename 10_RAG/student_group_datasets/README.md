@@ -11,6 +11,8 @@ Each folder has source documents, a `REQUIREMENT.md`, and a short `README.md`.
 **Read this first:** [`REQUIREMENTS_OVERVIEW.md`](REQUIREMENTS_OVERVIEW.md) (deliverables, ablation tables, grading).  
 **How you will be scored on numbers:** [`EVALUATION_METHODOLOGY.md`](EVALUATION_METHODOLOGY.md).
 
+**Browser (same ideas as the briefs):** [Tiny RAG](https://nursnaaz.github.io/tutorial/tiny-rag) · [Citations and refusals](https://nursnaaz.github.io/tutorial/citations-and-refusals) · [Prompt injection in RAG](https://nursnaaz.github.io/tutorial/rag-injection-guardrails)
+
 | # | Folder | Bot you build |
 |---|---|---|
 | 1 | [`01_banking/`](01_banking/) | Wells Fargo customer support |

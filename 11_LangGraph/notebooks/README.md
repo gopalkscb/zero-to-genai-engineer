@@ -26,5 +26,6 @@ pip install -r requirements.txt
 
 - Slides: [`teaching_decks/`](teaching_decks/)
 - Diagrams (04 / 05): [`assets/patterns/`](assets/patterns/) — regenerate with `python assets/generate_diagrams.py`
+- Browser: [ReAct](https://nursnaaz.github.io/tutorial/one-tool-one-loop) · [HITL](https://nursnaaz.github.io/tutorial/human-in-the-loop) · [MCP](https://nursnaaz.github.io/tutorial/mcp-as-usb)`
 
 ← [Session 11 README](../README.md)

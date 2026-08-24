@@ -34,6 +34,8 @@
 
 ## Start here
 
+**Browser (no API key):** [Tokens / BPE](https://nursnaaz.github.io/tutorial/tokens-are-money) · [Temperature, top-k, top-p](https://nursnaaz.github.io/tutorial/sampling-temperature-topk-topp) · [Context window](https://nursnaaz.github.io/tutorial/context-window-budget)
+
 1. [`notebooks/NB1_BPE_Tokenization.ipynb`](notebooks/NB1_BPE_Tokenization.ipynb)
 2. [`notebooks/NB2_Temperature_TopK_TopP.ipynb`](notebooks/NB2_Temperature_TopK_TopP.ipynb)
 3. Open the Excel workbooks in this folder alongside the notebooks.
