@@ -97,7 +97,7 @@ Full notebook index: [`notebooks/README.md`](notebooks/README.md).
 └── capstone_agentic_rag/             ← optional self-correcting RAG
 ```
 
-Sibling portfolio (same LangGraph skills, product UI): [medium-article-agent](https://github.com/nursnaaz/medium-article-agent) ([local copy](../medium-article-agent/)).
+Sibling portfolio (same LangGraph skills, product UI): [medium-article-agent](https://github.com/nursnaaz/medium-article-agent). Clone that repo; it is not in this course tree.
 
 ---
 
@@ -182,9 +182,9 @@ pytest tests/test_graph.py -v     # no API key — fakes LLM + retriever
 
 Ingest PDF / PPTX / HTML / notebooks → draft → parallel reviewers → HITL → export Markdown. Does not auto-publish to Medium.
 
-**Standalone repo (clone this for the portfolio):** [nursnaaz/medium-article-agent](https://github.com/nursnaaz/medium-article-agent)
+**Clone:** [nursnaaz/medium-article-agent](https://github.com/nursnaaz/medium-article-agent)
 
-Same code in this course at [`../medium-article-agent/`](../medium-article-agent/). Install, Docker, and deploy: that folder's [README](../medium-article-agent/README.md) (Python **3.12+**, Node 18+, `OPENAI_API_KEY`). It does not use the S11 notebook env.
+Python **3.12+**, Node 18+, `OPENAI_API_KEY`. Install and Docker are in that README. It does not use the S11 notebook env.
 
 ---
 

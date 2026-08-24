@@ -173,7 +173,8 @@ One numbered folder per weekend. Open that folder's README first. Class slides a
 | [`09_AgenticCoding_LoopEngineering/`](./09_AgenticCoding_LoopEngineering/) | S09 | [`AGENTIC_CODING_GUIDE.md`](./09_AgenticCoding_LoopEngineering/AGENTIC_CODING_GUIDE.md) |
 | [`10_RAG/`](./10_RAG/) | S10 | **[Start here](./10_RAG/README.md)** — 16 teaching notebooks, apps, 9 group briefs |
 | [`11_LangGraph/`](./11_LangGraph/) | S11 | **[Start here](./11_LangGraph/README.md)** — 5 notebooks, helpdesk, agentic RAG |
-| [`medium-article-agent/`](https://github.com/nursnaaz/medium-article-agent) | S11 extra | FastAPI + React editorial graph ([local copy](./medium-article-agent/)) |
+
+S11 extra (separate repo, not in this clone): [Medium article agent](https://github.com/nursnaaz/medium-article-agent).
 
 If you still see [`03_GPT_1_2_3/`](./03_GPT_1_2_3/), skip it. The live session is [`03_GPT_Evolution_and_Alignment/`](./03_GPT_Evolution_and_Alignment/).
 
@@ -515,10 +516,10 @@ S11c  Multi-agent orchestrator  required
   ├── S11d  Reasoning patterns  bonus (interview map)
   ├── S11e  SQL agent           bonus (Chinook)
   ├── capstone_agentic_rag/     optional self-correcting RAG
-  └── medium-article-agent/     optional FastAPI + React
+  └── medium-article-agent      optional FastAPI + React (separate repo)
 ```
 
-Install: [local README](./medium-article-agent/README.md) (Python **3.12**, Node 18+) or clone [nursnaaz/medium-article-agent](https://github.com/nursnaaz/medium-article-agent). Same code.
+Clone [nursnaaz/medium-article-agent](https://github.com/nursnaaz/medium-article-agent) (Python **3.12+**, Node 18+). Not bundled in this repo.
 
 | Day | Open | What you do | Time | Slides |
 |---|---|---|---|---|
@@ -553,7 +554,7 @@ Try: *“What is our refund policy?”* · *“How many open tickets does Jane D
 |---|---|---|---|
 | **[Helpdesk Orchestrator](./11_LangGraph/multi_agent_orchestrator/)** | S11c | LangGraph, Streamlit, MCP | Hierarchical teams, RAG + SQL, write-tools that pause |
 | **[Self-Correcting Agentic RAG](./11_LangGraph/capstone_agentic_rag/)** | S11 extra | LangGraph, RAGAS, Streamlit | Grade → rewrite → groundedness loop → escalate |
-| **[Medium Article Agent](https://github.com/nursnaaz/medium-article-agent)** | S11 extra | LangGraph, FastAPI, React | Ingest PDF/PPTX/HTML → draft → 6 reviewers → HITL → Markdown. [Local copy](./medium-article-agent/) |
+| **[Medium Article Agent](https://github.com/nursnaaz/medium-article-agent)** | S11 extra | LangGraph, FastAPI, React | Ingest PDF/PPTX/HTML → draft → 6 reviewers → HITL → Markdown. Separate repo — not in this clone. |
 | **[RAG Studio](./10_RAG/capstone_rag_studio/)** | S10 | FastAPI, React, RAGAS, DeepEval | Swap retrieval strategies and compare scores. [Eval slides](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/capstone_rag_studio/reports/rag_strategy_evaluation_presentation.html) |
 | **[Production RAG chatbot](./10_RAG/notebooks/production_rag_chatbot/)** | S10 | Streamlit, hybrid + rerank | Cited answers over a knowledge base |
 | **[RAG chatbot + memory](./10_RAG/notebooks/production_rag_chatbot_memory/)** | S10 / M06 | Streamlit, checkpointer / Store | Multi-turn support bot that remembers |

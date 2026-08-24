@@ -88,6 +88,3 @@ gensim-data/
 
 # Vendored third-party awesome-list. Link lives in 10_RAG/reference/README.md
 10_RAG/reference/awesome-rag-production/
-
-# Medium article agent runtime (uploads, generated images, sqlite)
-medium-article-agent/backend/data/
