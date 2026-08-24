@@ -7,4 +7,4 @@
 
 Workbooks: [`../bpe_step_by_step.xlsx`](../bpe_step_by_step.xlsx) · [`../llm_temperature_topp_topk.xlsx`](../llm_temperature_topp_topk.xlsx).
 
-Browser: [BPE](https://nursnaaz.github.io/tutorial/tokens-are-money) · [Sampling](https://nursnaaz.github.io/tutorial/sampling-temperature-topk-topp). ← [Session 04](../README.md)
+Browser: [BPE](https://nursnaaz.github.io/tutorial/tokens-are-money) · [Sampling](https://nursnaaz.github.io/tutorial/sampling-temperature-topk-topp) · [Context budget](https://nursnaaz.github.io/tutorial/context-window-budget). ← [Session 04](../README.md)

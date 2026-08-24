@@ -130,6 +130,7 @@ Before or after running the notebook, go through these interactive tutorials. Ea
 | [Self-Attention Mechanism](https://nursnaaz.github.io/tutorial/self-attention) | How Query, Key, and Value work — step-by-step using "I bought apple to eat" | Beginner | 30 min |
 | [Positional Encoding](https://nursnaaz.github.io/tutorial/positional-encoding) | Why self-attention is blind to word order, and how sinusoidal encoding solves it — with full calculations from the original paper | Beginner | 35 min |
 | [Multi-Head Attention](https://nursnaaz.github.io/tutorial/multi-head-attention) | How 3 attention heads run in parallel — semantic, syntactic, and purpose-driven relationships computed step-by-step | Intermediate | 60 min |
+| [Transformer implementation](https://nursnaaz.github.io/tutorial/transformer-code) | Keras/TensorFlow walkthrough of the same stack you build in PyTorch here | Intermediate | 60 min |
 
 These tutorials are interactive — you can run the calculations yourself in the browser. Use them to verify your understanding before writing the A1 article.
 

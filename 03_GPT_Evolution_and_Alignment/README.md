@@ -46,6 +46,8 @@ Text Prediction (GPT-1) → Scale (GPT-2 → GPT-3) → Alignment (RLHF → CAI 
 
 Then optionally [`holmes_gpt_ui.py`](holmes_gpt_ui.py) and the [`paper_summaries/`](paper_summaries/) notebooks.
 
+**Browser:** [BERT for text classification](https://nursnaaz.github.io/tutorial/bert-classification) — run this when you hit the BERT paper.
+
 <p align="center">
   <img src="docs/screenshots/app.png" alt="Holmes GPT Streamlit app — temperature, top-k, and prompt" width="920">
 </p>

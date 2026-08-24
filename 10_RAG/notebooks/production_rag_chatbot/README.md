@@ -16,6 +16,6 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Demo prompts: [`DEMO_QUESTIONS.md`](DEMO_QUESTIONS.md).
+Demo prompts: [`DEMO_QUESTIONS.md`](DEMO_QUESTIONS.md). Browser first: [Production challenges](https://nursnaaz.github.io/tutorial/production-challenges) · [Citations](https://nursnaaz.github.io/tutorial/citations-and-refusals).
 
 ← [Notebooks](../README.md) · [Session 10](../../README.md)

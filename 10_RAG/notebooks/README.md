@@ -37,6 +37,6 @@ Each notebook also has a `%pip install` cell for Colab / a fresh kernel.
 
 Class slides are on [GitHub Pages](https://nursnaaz.github.io/zero-to-genai-engineer/). Sample files: [`data/`](data/). `_extracted_images/` is created when you run notebook 15 (gitignored).
 
-**Browser labs:** [Tiny RAG](https://nursnaaz.github.io/tutorial/tiny-rag) (with 01) · [Chunking](https://nursnaaz.github.io/tutorial/chunking-intuition) (with 02) · [Hybrid + RRF](https://nursnaaz.github.io/tutorial/hybrid-search-rrf) (with 07) · [Citations](https://nursnaaz.github.io/tutorial/citations-and-refusals) · [Injection](https://nursnaaz.github.io/tutorial/rag-injection-guardrails) · [Memory](https://nursnaaz.github.io/tutorial/chatbots-forget) (with 11) · [MCP](https://nursnaaz.github.io/tutorial/mcp-as-usb) (with 16)
+**Browser labs:** [Tiny RAG](https://nursnaaz.github.io/tutorial/tiny-rag) (with 01) · [Chunking](https://nursnaaz.github.io/tutorial/chunking-intuition) (with 02) · [Hybrid + RRF](https://nursnaaz.github.io/tutorial/hybrid-search-rrf) (with 07) · [Citations](https://nursnaaz.github.io/tutorial/citations-and-refusals) · [Injection](https://nursnaaz.github.io/tutorial/rag-injection-guardrails) · [Memory](https://nursnaaz.github.io/tutorial/chatbots-forget) (with 11) · [Production](https://nursnaaz.github.io/tutorial/production-challenges) (with 13) · [MCP](https://nursnaaz.github.io/tutorial/mcp-as-usb) (with 16)
 
 ← [Session 10](../README.md)
