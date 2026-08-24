@@ -1,7 +1,15 @@
+<div align="center">
+
 # RAG Studio
 
+### Session 10 · M08 portfolio
+
+*Swap every stage of a RAG pipeline — then compare strategies on the same question.*
+
+</div>
+
 RAG Studio is a configurable RAG (Retrieval-Augmented Generation) workbench built as
-the M10 capstone project. Every stage of the pipeline — chunking, embeddings, vector
+the Session 10 / M08 portfolio project. Every stage of the pipeline — chunking, embeddings, vector
 store, query transform, retrieval, post-retrieval, reranking, generation,
 orchestration, caching, and guardrails — is a swappable module chosen from a live
 Options_Catalog, so you can define named **strategy variants** and compare them
@@ -18,7 +26,7 @@ The project has three tiers:
 
 ## Prerequisites
 
-- Python 3.11 (this repo's `.venv` at `../../.venv` from this directory, or your own)
+- Python 3.11+
 - Node.js 18+ and npm
 - An `OPENAI_API_KEY` for core embedding/generation/judge features (optional keys
   unlock optional providers — see `.env.example`)
@@ -83,6 +91,10 @@ cd frontend && npm run build
 cd frontend && npm run test:e2e
 ```
 
+## Evaluation presentation
+
+[▶ RAG strategy evaluation (GitHub Pages)](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/capstone_rag_studio/reports/rag_strategy_evaluation_presentation.html)
+
 ## The capstone notebook
 
 `capstone.ipynb` exercises the full pipeline **live** (the one place in this project
@@ -102,3 +114,5 @@ capstone_rag_studio/
 ├── requirements.txt
 └── .env.example
 ```
+
+← [Session 10](../README.md)
