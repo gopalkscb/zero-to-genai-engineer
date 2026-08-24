@@ -10,7 +10,7 @@
 [![LangChain](https://img.shields.io/badge/LangChain-1.0-1C3C3C?style=for-the-badge)](https://python.langchain.com/)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 
-[Start here](#-start-here) · [Path](#-learning-path) · [Why graphs](#-why-a-graph) · [Apps](#-run-the-apps) · [Instructors](TEACHING.md)
+[Start here](#-start-here) · [Path](#-learning-path) · [Why graphs](#-why-a-graph) · [Apps](#-run-the-apps)
 
 </div>
 
@@ -82,7 +82,6 @@ Full notebook index: [`notebooks/README.md`](notebooks/README.md).
 ```text
 11_LangGraph/
 ├── README.md                         ← you are here
-├── TEACHING.md                       ← instructor notes + S10 coverage map
 ├── .env.example
 ├── notebooks/
 │   ├── 01_langgraph_fundamentals_and_agents.ipynb
@@ -201,8 +200,6 @@ Python **3.12+**, Node 18+, `OPENAI_API_KEY`. Install and Docker are in that REA
 ## ➡️ What's next
 
 S11 gives you **control flow**. Memory, MCP, guardrails, and the FastAPI apps are already in S10 / earlier sessions. What's still ahead: CrewAI, dedicated document/code modules, LLMOps, LoRA — see the [root syllabus](../README.md#-where-the-23-module-syllabus-stands).
-
-Instructors: [`TEACHING.md`](TEACHING.md) (how to teach + every S10 tool reused here).
 
 ---
 

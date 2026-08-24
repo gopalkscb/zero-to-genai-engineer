@@ -507,7 +507,7 @@ Every group ships a cited, refusal-aware support bot and **8 ablation tables** (
 
 > **MISSING from S10:** `ProductionRAGChatbot.chat()` is a **straight line**. It cannot retry retrieval, rewrite a vague question, or pause for a human. LangGraph is that control flow.
 
-**Start page:** [`11_LangGraph/README.md`](./11_LangGraph/) · instructors: [`TEACHING.md`](./11_LangGraph/TEACHING.md) · notebooks: [`notebooks/README.md`](./11_LangGraph/notebooks/)
+**Start page:** [`11_LangGraph/README.md`](./11_LangGraph/) · notebooks: [`notebooks/README.md`](./11_LangGraph/notebooks/)
 
 ```text
 S11a  Fundamentals & agents     required

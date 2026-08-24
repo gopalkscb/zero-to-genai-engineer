@@ -33,8 +33,6 @@ genuinely wired in rather than referenced:
 - **Structured output** (S10f §11) — export any answer + its sources as a validated
   `{answer, citations: [...]}` object, on demand
 
-See [`../TEACHING.md`](../TEACHING.md) for the full S10 → S11 coverage map (what's reused, what's an extension point).
-
 ## Run it
 
 ```bash
