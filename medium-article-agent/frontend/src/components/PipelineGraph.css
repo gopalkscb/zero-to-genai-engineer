@@ -1,0 +1,535 @@
+.lg-wrap {
+  --ink: #e7f3ef;
+  --mute: #9bb8b0;
+  --brass: #e2b65a;
+  --brass-ink: #3a2a0c;
+  --loop: #f0b429;
+  --exit: #7ed0b6;
+  --fan: #8fd0e0;
+  --hitl: #e07a5f;
+  --paper: #0f3a44;
+  --paper-2: #0a2c34;
+  position: relative;
+  background:
+    radial-gradient(1200px 420px at 10% -10%, rgba(226, 182, 90, 0.12), transparent 50%),
+    linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  color: var(--ink);
+  border-radius: 22px;
+  padding: 20px 18px 16px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(231, 243, 239, 0.08), 0 18px 40px rgba(12, 36, 42, 0.18);
+}
+
+.lg-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 47px,
+    rgba(231, 243, 239, 0.035) 48px
+  );
+  pointer-events: none;
+}
+
+.lg-head,
+.lg-metrics,
+.lg-board,
+.lg-legend,
+.lg-inspect {
+  position: relative;
+}
+
+.lg-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin: 0 8px 14px;
+}
+
+.lg-kicker {
+  margin: 0;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.lg-title {
+  margin: 2px 0 0;
+  font-family: Fraunces, 'Source Serif 4', Georgia, serif;
+  font-size: 28px;
+  font-weight: 550;
+  letter-spacing: -0.03em;
+}
+
+.lg-status {
+  margin: 0;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--mute);
+}
+
+.lg-status.is-running {
+  color: var(--brass);
+}
+
+.lg-status.is-paused_hitl {
+  color: var(--hitl);
+}
+
+.lg-status.is-completed {
+  color: var(--exit);
+}
+
+.lg-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+  margin: 0 8px 16px;
+}
+
+.lg-metric {
+  appearance: none;
+  text-align: left;
+  border: 1px solid rgba(226, 182, 90, 0.28);
+  background: rgba(10, 32, 38, 0.45);
+  color: inherit;
+  border-radius: 14px;
+  padding: 10px 12px 8px;
+  cursor: pointer;
+  min-height: 74px;
+}
+
+.lg-metric:hover,
+.lg-metric:focus-visible,
+.lg-metric.is-on {
+  border-color: var(--brass);
+  background: rgba(226, 182, 90, 0.12);
+  outline: none;
+}
+
+.lg-metric-num {
+  display: block;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--brass);
+  line-height: 1.1;
+}
+
+.lg-metric-lab {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.lg-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 12px;
+  align-items: stretch;
+  margin: 0 4px;
+}
+
+.lg-board {
+  position: relative;
+  min-width: 0;
+}
+
+.lg-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lg-band {
+  fill: rgba(231, 243, 239, 0.03);
+  stroke: rgba(231, 243, 239, 0.06);
+}
+
+.lg-band.is-review {
+  fill: rgba(240, 180, 41, 0.05);
+}
+
+.lg-band.is-finish {
+  fill: rgba(126, 208, 182, 0.05);
+}
+
+.lg-band.is-on {
+  stroke: var(--brass);
+}
+
+.lg-band-label {
+  fill: var(--mute);
+  font-size: 11px;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lg-edge {
+  fill: none;
+  stroke: #4d7373;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.lg-edge.is-fanout {
+  stroke: var(--fan);
+  stroke-width: 1.4;
+}
+
+.lg-edge.is-loop {
+  stroke: var(--loop);
+  stroke-dasharray: 6 5;
+}
+
+.lg-edge.is-exit {
+  stroke: var(--exit);
+}
+
+.lg-edge.is-hitl {
+  stroke: var(--hitl);
+  stroke-dasharray: 3 4;
+}
+
+.lg-edge.is-live {
+  animation: lg-march 1.1s linear infinite;
+}
+
+.lg-edge.is-active {
+  stroke-width: 2.4;
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+.lg-edge.is-dim {
+  opacity: 0.18;
+}
+
+.lg-edge-hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 18;
+  cursor: pointer;
+}
+
+/* Nodes are SVG groups positioned by a transform attribute. Never set a CSS
+   transform or position here: it overrides that attribute and hides every node. */
+.lg-node {
+  cursor: pointer;
+}
+
+.lg-node > rect {
+  fill: #163f48;
+  stroke: #5d8680;
+  stroke-width: 1;
+}
+
+.lg-node.is-done > rect {
+  fill: #1b5560;
+  stroke: #8fd0c4;
+}
+
+.lg-node.is-active > rect {
+  fill: #2a6a48;
+  stroke: #b7ebc4;
+  stroke-width: 2;
+}
+
+.lg-node.is-on > rect,
+.lg-node:hover > rect,
+.lg-node:focus-visible > rect {
+  stroke: var(--brass);
+  stroke-width: 2;
+  outline: none;
+}
+
+.lg-node.is-dim {
+  opacity: 0.35;
+}
+
+.lg-node-name {
+  fill: var(--ink);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.lg-node-phase {
+  fill: var(--mute);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lg-edge-label {
+  fill: var(--mute);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  paint-order: stroke;
+  stroke: var(--paper-2);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.lg-slug {
+  fill: var(--brass);
+  stroke: var(--paper-2);
+  stroke-width: 1.5;
+}
+
+.lg-slug-text {
+  fill: var(--brass-ink);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lg-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 8px 8px 0;
+}
+
+.lg-chip,
+.lg-key {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.lg-chip {
+  appearance: none;
+  background: transparent;
+  border: 1px solid rgba(231, 243, 239, 0.16);
+  border-radius: 999px;
+  color: var(--ink);
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.lg-chip.is-on,
+.lg-chip:hover,
+.lg-chip:focus-visible {
+  border-color: var(--brass);
+  color: var(--brass);
+  outline: none;
+}
+
+.lg-key {
+  padding-left: 16px;
+  position: relative;
+}
+
+.lg-key::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 12px;
+  border-top: 2px solid #4d7373;
+}
+
+.lg-key.is-fanout::before {
+  border-color: var(--fan);
+}
+
+.lg-key.is-loop::before {
+  border-color: var(--loop);
+  border-style: dashed;
+}
+
+.lg-key.is-exit::before {
+  border-color: var(--exit);
+}
+
+.lg-key.is-hitl::before {
+  border-color: var(--hitl);
+  border-style: dashed;
+}
+
+.lg-inspect {
+  margin: 0;
+  padding: 14px 16px 12px;
+  border-radius: 16px;
+  background: rgba(6, 22, 26, 0.55);
+  border: 1px solid rgba(231, 243, 239, 0.08);
+  min-height: 132px;
+  max-height: 640px;
+  overflow: auto;
+}
+
+.lg-inspect-kicker {
+  margin: 0 0 4px;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.lg-inspect h3 {
+  margin: 0 0 8px;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 22px;
+  font-weight: 550;
+}
+
+.lg-inspect p,
+.lg-inspect li {
+  margin: 0 0 8px;
+  color: #d5e6e1;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.lg-inspect-num {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 10px 0 14px;
+}
+
+.lg-inspect-num strong {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 28px;
+  color: var(--brass);
+  line-height: 1;
+}
+
+.lg-wires {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.lg-wires h4 {
+  margin: 0 0 6px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.lg-wires button {
+  appearance: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(231, 243, 239, 0.1);
+  background: rgba(231, 243, 239, 0.04);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.lg-wires button em {
+  color: var(--mute);
+  font-style: normal;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+}
+
+.lg-wires button:hover,
+.lg-wires button:focus-visible {
+  border-color: var(--brass);
+  outline: none;
+}
+
+.lg-events {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.lg-events li {
+  display: flex;
+  gap: 10px;
+}
+
+.lg-events time {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  color: var(--mute);
+  min-width: 54px;
+}
+
+.lg-tip {
+  position: absolute;
+  z-index: 4;
+  width: min(320px, 70%);
+  transform: translateX(-40%);
+  background: #f4efe2;
+  color: #1c1914;
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 12px 30px rgba(6, 20, 24, 0.28);
+  pointer-events: none;
+}
+
+.lg-tip strong {
+  display: block;
+  font-family: Fraunces, Georgia, serif;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.lg-tip span {
+  display: block;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+@keyframes lg-march {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+
+@keyframes lg-pulse {
+  50% {
+    stroke-opacity: 0.45;
+  }
+}
+
+@media (max-width: 980px) {
+  .lg-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .lg-inspect {
+    max-height: none;
+  }
+
+  .lg-wires {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lg-edge.is-live,
+  .lg-node.is-active > rect {
+    animation: none;
+  }
+}

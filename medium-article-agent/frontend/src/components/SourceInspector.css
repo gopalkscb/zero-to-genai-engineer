@@ -1,0 +1,101 @@
+.src-panel {
+  background: #fff;
+  border: 1px solid #e8e4da;
+  padding: 22px 24px 20px;
+}
+
+.src-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 14px;
+}
+
+.src-kicker {
+  margin: 0 0 4px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a8478;
+}
+
+.src-head h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.src-meta {
+  margin: 0;
+  font-size: 13px;
+  color: #6b675f;
+}
+
+.src-bar {
+  height: 6px;
+  background: #efece4;
+  overflow: hidden;
+}
+
+.src-bar span {
+  display: block;
+  height: 100%;
+  background: #1a8917;
+}
+
+.src-bar-lab {
+  margin: 8px 0 16px;
+  font-size: 13px;
+  color: #6b675f;
+}
+
+.src-files {
+  display: grid;
+  gap: 12px;
+}
+
+.src-file {
+  border-top: 1px solid #eeeae1;
+  padding-top: 12px;
+}
+
+.src-file header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.src-file header span {
+  color: #6b675f;
+}
+
+.src-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.src-types li {
+  font-size: 12px;
+  background: #f6f3ec;
+  padding: 4px 8px;
+  color: #3d3a34;
+}
+
+.src-types em {
+  font-style: normal;
+  color: #8a8478;
+  margin-right: 4px;
+}
+
+.src-warn {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: #9a6700;
+}

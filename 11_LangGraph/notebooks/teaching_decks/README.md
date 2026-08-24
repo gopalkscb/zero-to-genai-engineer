@@ -1,6 +1,6 @@
 # Classroom slides — Session 11
 
-**Open on GitHub Pages** (the repo file view shows raw HTML): [deck index](https://nursnaaz.github.io/zero-to-genai-engineer/)
+Open these on [GitHub Pages](https://nursnaaz.github.io/zero-to-genai-engineer/) (the repo file view shows raw HTML).
 
 | File | Day | Topic |
 |---|---|---|

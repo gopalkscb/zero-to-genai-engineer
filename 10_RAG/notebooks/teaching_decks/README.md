@@ -1,6 +1,6 @@
 # Classroom slides — Session 10
 
-**Open on GitHub Pages** (the repo file view shows raw HTML): [deck index](https://nursnaaz.github.io/zero-to-genai-engineer/)
+Open these on [GitHub Pages](https://nursnaaz.github.io/zero-to-genai-engineer/) (the repo file view shows raw HTML).
 
 | File | Day | Topic |
 |---|---|---|
@@ -16,5 +16,6 @@
 | [teach_09_full_pipeline_recap.html](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_09_full_pipeline_recap.html) | S10d | Pipeline recap |
 | [teach_11_production_chatbots.html](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_11_production_chatbots.html) | S10f | Production chatbots |
 | [teach_15_multimodal_rag.html](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_15_multimodal_rag.html) | extra | Multimodal RAG |
+| [RAG Studio evaluation](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/capstone_rag_studio/reports/rag_strategy_evaluation_presentation.html) | extra | Strategy eval report |
 
 ← [Notebooks](../README.md) · [Session 10](../../README.md)

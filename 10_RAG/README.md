@@ -22,7 +22,7 @@
 
 Work **top to bottom**. Do not jump to Streamlit until notebooks **01–11** make sense.
 
-**Memory & Chatbots (M06) ships here — there is no later folder.** Notebook **11** is short-term memory, summarisation, long-term `Store`, streaming, guardrails, and HITL. Notebooks **13–14** turn that into a production Streamlit bot. Session 11 reuses those primitives; it does not re-teach them.
+**Memory & Chatbots (M06) ships here.** Notebook **11** is short-term memory, summarisation, long-term `Store`, streaming, guardrails, and HITL. Notebooks **13–14** turn that into a production Streamlit bot. Session 11 reuses those primitives.
 
 ---
 
@@ -84,9 +84,9 @@ Pipeline recap: [▶ Full pipeline](https://nursnaaz.github.io/zero-to-genai-eng
 |---|---|---|
 | [13 — Production chatbot](notebooks/13_capstone_production_rag_chatbot.ipynb) ([student copy](notebooks/13_capstone_production_rag_chatbot_STUDENT.ipynb)) | Build `ProductionRAGChatbot` → [`production_rag_chatbot/`](notebooks/production_rag_chatbot/) | After NB11 |
 | [14 — + memory](notebooks/14_capstone_production_rag_chatbot_memory.ipynb) ([student copy](notebooks/14_capstone_production_rag_chatbot_memory_STUDENT.ipynb)) | Durable memory on the same pipeline | After NB13 |
-| [15 — Multimodal](notebooks/15_multimodal_rag_images.ipynb) ([▶ slides](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_15_multimodal_rag.html)) | Images + text in one index | Extra |
+| [15 — Multimodal](notebooks/15_multimodal_rag_images.ipynb) ([slides](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_15_multimodal_rag.html)) | Images + text in one index | Extra |
 | [16 — MCP helpdesk](notebooks/16_capstone_mcp_agents_rag.ipynb) | RAG + SQL tools over MCP | Extra · **required before S11 Day 3** |
-| **[RAG Studio](capstone_rag_studio/)** | Swap retrieval strategies side by side | Portfolio |
+| **[RAG Studio](capstone_rag_studio/)** | Swap retrieval strategies side by side. [Eval slides](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/capstone_rag_studio/reports/rag_strategy_evaluation_presentation.html) | Portfolio |
 | **[Group datasets](student_group_datasets/)** | 9 real-company briefs | Cohort project |
 
 ---

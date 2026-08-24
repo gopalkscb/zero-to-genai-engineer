@@ -16,7 +16,7 @@
 
 **Real code · Real papers · Real datasets · Real apps · Built to get you hired**
 
-[Start here](#-start-here) · [Prerequisites](#-prerequisites) · [Syllabus](#-full-syllabus-every-session) · [S10 RAG](#s10--rag--memory--chatbots-m07--m08--m06) · [S11 LangGraph](#s11--langgraph-stateful-agents-m10) · [Projects](#-projects-you-can-ship) · [Contributing](#-contributing)
+[Start here](#-start-here) · [Syllabus](#-full-syllabus-every-session) · [Presentations](https://nursnaaz.github.io/zero-to-genai-engineer/) · [S10 RAG](#s10--rag--memory--chatbots-m07--m08--m06) · [S11 LangGraph](#s11--langgraph-stateful-agents-m10) · [Projects](#-projects-you-can-ship)
 
 </div>
 
@@ -43,7 +43,7 @@ New sessions drop every **Saturday / Sunday**. Star the repo to get notified. Qu
 7. [Sessions shipped so far](#-sessions-shipped-so-far)
 8. [Full syllabus](#-full-syllabus-every-session)
 9. [Projects](#-projects-you-can-ship)
-10. [Classroom presentations](#-classroom-presentations-github-pages)
+10. [Classroom presentations](#-classroom-presentations)
 11. [Tech stack](#-tech-stack-when-each-tool-first-appears)
 12. [Module map](#-where-the-23-module-syllabus-stands)
 13. [Contributing](#-contributing)
@@ -57,9 +57,10 @@ New sessions drop every **Saturday / Sunday**. Star the repo to get notified. Qu
 |---|---|
 | **New to Python / ML** | [`prereq/`](./prereq/) (~3 hours) → then **[S00](./00_How_Search_Engine_Works/)** |
 | **Ready for the course** | Open the next session folder. **The README inside is the start page.** Run notebooks in order. |
-| **On RAG + memory (S10)** | [`10_RAG/README.md`](./10_RAG/) — notebooks **01–12** required; **11 / 13 / 14** are the Memory & Chatbots track |
-| **On LangGraph (S11)** | [`11_LangGraph/README.md`](./11_LangGraph/) — notebooks **01–03** required, **04–05** bonus |
-| **Caught up through S11** | Ship a [portfolio piece](#-projects-you-can-ship). Memory & chatbots are **already in S10** — not a future module. |
+| **On RAG + memory (S10)** | [`10_RAG/README.md`](./10_RAG/). Notebooks **01–12** are required. **11, 13, and 14** are the chatbot / memory track. |
+| **On LangGraph (S11)** | [`11_LangGraph/README.md`](./11_LangGraph/). Notebooks **01–03** required; **04–05** are bonus. |
+| **Want the slides** | [Class presentations](https://nursnaaz.github.io/zero-to-genai-engineer/). Open those links. Clicking the `.html` in GitHub just shows source. |
+| **Caught up through S11** | Ship something from [Projects](#-projects-you-can-ship). Chatbot memory is already in S10. |
 
 Beginner notebooks (no install):
 
@@ -67,7 +68,7 @@ Beginner notebooks (no install):
 |---|---|---|
 | [01 — Python for GenAI](./prereq/notebooks/01_python_for_genai.ipynb) | Variables, loops, functions, dicts, f-strings | 60 min |
 | [02 — Math Intuition](./prereq/notebooks/02_math_intuition.ipynb) | Vectors, dot product, softmax | 60 min |
-| [03 — Neural Networks](./prereq/notebooks/03_neural_networks_intuition.ipynb) | How models learn — in plain English | 60 min |
+| [03 — Neural Networks](./prereq/notebooks/03_neural_networks_intuition.ipynb) | How models learn, in plain English | 60 min |
 
 Then keep the **[Cheat Sheet](./prereq/cheatsheet.md)** open during S00.
 
@@ -77,33 +78,33 @@ Then keep the **[Cheat Sheet](./prereq/cheatsheet.md)** open during S00.
 
 | Need | Detail |
 |---|---|
-| **Python** | **3.11+** (3.12 is fine). Session apps use `python3 -m streamlit` so the same env is used. |
-| **Git** | Clone this repo. Do not copy-paste folders by hand. |
-| **Notebooks** | [Google Colab](https://colab.research.google.com) (no install) **or** local Jupyter. |
-| **API keys** | Early sessions (S00–S03, most of S04 NB1) need **none**. S04 NB2+ use Gemini. S10+ expect `OPENAI_API_KEY` in [`10_RAG/.env.example`](./10_RAG/.env.example). Optional: Anthropic, Cohere, Pinecone, Tavily, LangSmith — only when a notebook says so. |
-| **Local models (S05 / S06 Ollama notebook)** | [Ollama](https://ollama.com) or [LM Studio](https://lmstudio.ai) on your laptop. Not available in Colab. |
-| **GPU** | Only S02 training wants Colab Pro / a real GPU. Everything else is CPU-friendly or API-backed. |
-| **Node 18+** | Only for React apps (CineMatch, Distill, RAG Studio, Medium article agent). Streamlit-only paths do not need Node. |
+| **Python** | **3.11+** (3.12 is fine). Launch session apps with `python3 -m streamlit` so you hit the same environment. |
+| **Git** | Clone the repo. Don't copy folders around by hand. |
+| **Notebooks** | [Google Colab](https://colab.research.google.com) if you want zero install, or local Jupyter. |
+| **API keys** | S00–S03 (and most of S04 NB1) need none. S04 NB2 onwards uses Gemini. From S10, put `OPENAI_API_KEY` in a copy of [`10_RAG/.env.example`](./10_RAG/.env.example). Anthropic, Cohere, Pinecone, Tavily, LangSmith only when a notebook asks. |
+| **Local models (S05 / S06 Ollama notebook)** | [Ollama](https://ollama.com) or [LM Studio](https://lmstudio.ai) on your laptop. These will not run in Colab. |
+| **GPU** | Only the S02 training loop wants Colab Pro / a real GPU. Everything else is CPU or an API. |
+| **Node 18+** | Only if you run a React app (CineMatch, Distill, RAG Studio, Medium article agent). Streamlit paths don't need it. |
 
 ```bash
 git clone https://github.com/nursnaaz/zero-to-genai-engineer.git
 cd zero-to-genai-engineer
 ```
 
-Then open that weekend's folder README — **that file is the start page**. There is no single root `requirements.txt`; each session / app has its own (`10_RAG/notebooks/requirements.txt`, `11_LangGraph/notebooks/requirements.txt`, …).
+Then open that weekend's folder README. That's the start page. There is no root `requirements.txt`; each session and app has its own (`10_RAG/notebooks/requirements.txt`, `11_LangGraph/notebooks/requirements.txt`, and so on).
 
-Never commit a real `.env`. Copy the session `.env.example` instead.
+Copy `.env.example` to `.env`. Don't commit the real one.
 
 ---
 
 ## 📦 What's in this repo
 
-This is not a slide dump. Every session has **code you run**, and most have **something you ship**.
+Every weekend is notebooks you actually run. Most also leave you with an app, a paper, or a dataset you can talk about in an interview.
 
 | Kind of material | Count | Where it lives |
 |---|---|---|
 | Weekend sessions (S00–S11) + pre-work | **13** | Numbered folders + [`prereq/`](./prereq/) |
-| Jupyter notebooks | **57** | Session `notebooks/` + 11 S03 paper summaries + 2 S10 student copies. Do not use the extra notebook in [`03_GPT_1_2_3/`](./03_GPT_1_2_3/) (legacy). |
+| Jupyter notebooks | **57** | Session `notebooks/`, 11 S03 paper summaries, 2 S10 student copies, plus the RAG Studio and agentic-RAG capstone notebooks. Ignore [`03_GPT_1_2_3/`](./03_GPT_1_2_3/) — leftover from an older layout. |
 | RAG teaching notebooks (01–16 + 2 student labs) | **18** | [`10_RAG/notebooks/`](./10_RAG/notebooks/) |
 | LangGraph teaching notebooks | **5** | [`11_LangGraph/notebooks/`](./11_LangGraph/notebooks/) (plus optional `self_correcting_rag.ipynb` in the capstone folder) |
 | Original research PDFs | **12** | S02 *Attention Is All You Need* + S03 GPT / BERT / alignment |
@@ -114,14 +115,13 @@ This is not a slide dump. Every session has **code you run**, and most have **so
 | Student group RAG datasets | **9 companies** | [`10_RAG/student_group_datasets/`](./10_RAG/student_group_datasets/) |
 | Shippable apps in this repo | **10** | See [Projects](#-projects-you-can-ship) |
 
-**Folder number ≠ module number.** `10_RAG/` is session **S10** = modules **M07 + M08 + M06** (memory absorbed into the RAG chatbot). `11_LangGraph/` is session **S11** = module **M10**.
+Quick naming trap: folder `10_RAG/` is session **S10**, which covers modules **M07 + M08 + M06** (memory went into the RAG chatbot, not its own weekend). `11_LangGraph/` is session **S11** = module **M10**.
 
 ---
 
 ## 🔗 The MISSING chain
 
-Every session answers one question: *"What was missing from the last one?"*  
-That chain **is** the curriculum — not a pile of tutorials.
+Every session exists because the last one left a gap. That chain is how the course is sequenced.
 
 ```text
 S00  Search (TF-IDF)
@@ -156,64 +156,64 @@ S00  Search (TF-IDF)
 
 ## 📁 How this repo is laid out
 
-One numbered folder per session. **Open that folder's README first.**
+One numbered folder per weekend. Open that folder's README first. Class slides are linked in the session table, next to the notebooks in the syllabus, and collected in [one list](#-classroom-presentations).
 
-| Folder | Session | Open this |
+| Folder | Session | What's in it |
 |---|---|---|
 | [`prereq/`](./prereq/) | Pre-work | 3 notebooks + cheat sheet |
-| [`00_How_Search_Engine_Works/`](./00_How_Search_Engine_Works/) | S00 | 2 notebooks + 3 slide PDFs |
+| [`00_How_Search_Engine_Works/`](./00_How_Search_Engine_Works/) | S00 | 2 notebooks |
 | [`01_Text_to_Numbers/`](./01_Text_to_Numbers/) | S01 | 2 notebooks + [CineMatch](./01_Text_to_Numbers/movie_recommender/) |
-| [`02_Transformer_Architecture/`](./02_Transformer_Architecture/) | S02 | Notebook + Vaswani paper + 3 browser tutorials + animation |
-| [`03_GPT_Evolution_and_Alignment/`](./03_GPT_Evolution_and_Alignment/) | S03 | GPT from scratch + 11 papers + 11 summaries + [▶ slides](https://nursnaaz.github.io/zero-to-genai-engineer/03_GPT_Evolution_and_Alignment/GPT_Papers_Presentation.html) |
+| [`02_Transformer_Architecture/`](./02_Transformer_Architecture/) | S02 | Notebook, Vaswani paper, animation |
+| [`03_GPT_Evolution_and_Alignment/`](./03_GPT_Evolution_and_Alignment/) | S03 | GPT from scratch + 11 papers |
 | [`04_BPE_Temperature_Top_K_Top_P/`](./04_BPE_Temperature_Top_K_Top_P/) | S04 | 2 notebooks + 2 Excel workbooks |
-| [`05_Local_LLMs_and_API_Providers/`](./05_Local_LLMs_and_API_Providers/) | S05 | 6 notebooks + 2 demo apps + [Distill](./05_Local_LLMs_and_API_Providers/distill/) |
-| [`06_Prompt_Engineering_DSPY_GEPA_COT/`](./06_Prompt_Engineering_DSPY_GEPA_COT/) | S06 | DSPy → few-shot → MIPROv2 → GEPA (cloud + Ollama) |
-| [`07_LangChain_Notebooks/`](./07_LangChain_Notebooks/) | S07 | One notebook: 4 providers · templates · history · streaming · LCEL |
-| [`08_Recap/`](./08_Recap/) | S08 | [▶ Presentation](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_PRESENTATION.html) · [▶ Full text](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_SLIDES.html) |
-| [`09_AgenticCoding_LoopEngineering/`](./09_AgenticCoding_LoopEngineering/) | S09 | [`AGENTIC_CODING_GUIDE.md`](./09_AgenticCoding_LoopEngineering/AGENTIC_CODING_GUIDE.md) · 20+ loop exercises |
-| [`10_RAG/`](./10_RAG/) | S10 | **[Start →](./10_RAG/README.md)** 16 notebooks · 12 decks · 3 Streamlit/MCP apps · RAG Studio · 9 group briefs |
-| [`11_LangGraph/`](./11_LangGraph/) | S11 | **[Start →](./11_LangGraph/README.md)** 5 notebooks · 4 decks · helpdesk orchestrator · agentic RAG |
-| [`medium-article-agent/`](./medium-article-agent/) | S11 extra | FastAPI + React editorial graph |
+| [`05_Local_LLMs_and_API_Providers/`](./05_Local_LLMs_and_API_Providers/) | S05 | 6 notebooks + [Distill](./05_Local_LLMs_and_API_Providers/distill/) |
+| [`06_Prompt_Engineering_DSPY_GEPA_COT/`](./06_Prompt_Engineering_DSPY_GEPA_COT/) | S06 | DSPy → few-shot → MIPROv2 → GEPA |
+| [`07_LangChain_Notebooks/`](./07_LangChain_Notebooks/) | S07 | One notebook: 4 providers, LCEL |
+| [`08_Recap/`](./08_Recap/) | S08 | Recap of S00–S07 |
+| [`09_AgenticCoding_LoopEngineering/`](./09_AgenticCoding_LoopEngineering/) | S09 | [`AGENTIC_CODING_GUIDE.md`](./09_AgenticCoding_LoopEngineering/AGENTIC_CODING_GUIDE.md) |
+| [`10_RAG/`](./10_RAG/) | S10 | **[Start here](./10_RAG/README.md)** — 16 teaching notebooks, apps, 9 group briefs |
+| [`11_LangGraph/`](./11_LangGraph/) | S11 | **[Start here](./11_LangGraph/README.md)** — 5 notebooks, helpdesk, agentic RAG |
+| [`medium-article-agent/`](https://github.com/nursnaaz/medium-article-agent) | S11 extra | FastAPI + React editorial graph ([local copy](./medium-article-agent/)) |
 
-`03_GPT_1_2_3/` is **legacy** — use [`03_GPT_Evolution_and_Alignment/`](./03_GPT_Evolution_and_Alignment/) instead.
+If you still see [`03_GPT_1_2_3/`](./03_GPT_1_2_3/), skip it. The live session is [`03_GPT_Evolution_and_Alignment/`](./03_GPT_Evolution_and_Alignment/).
 
 ---
 
 ## 🗺️ Sessions shipped so far
 
-| Session | Topic | What you build | Hours (classroom) |
+| Session | Topic | What you build | Slides |
 |---|---|---|---|
-| [Pre-work](./prereq/) | Python · vectors · how NNs learn | 3 Colab notebooks + cheat sheet | ~3 |
-| [S00](./00_How_Search_Engine_Works/) | How Search Engines Work | TF-IDF engine from scratch (no ML) | ~1.5 |
-| [S01](./01_Text_to_Numbers/) | Text to Numbers | 5 embedding methods · [CineMatch](./01_Text_to_Numbers/movie_recommender/) | ~2 + project |
-| [S02](./02_Transformer_Architecture/) | Transformer Architecture | Encoder–Decoder in PyTorch · EN→IT | ~2 + GPU train |
-| [S03](./03_GPT_Evolution_and_Alignment/) | GPT Evolution & Alignment | GPT from scratch · 11 papers · [▶ slides](https://nursnaaz.github.io/zero-to-genai-engineer/03_GPT_Evolution_and_Alignment/GPT_Papers_Presentation.html) | ~8 |
-| [S04](./04_BPE_Temperature_Top_K_Top_P/) | BPE & Sampling | Tokenize from scratch · temperature / top-k / top-p | ~2 |
-| [S05](./05_Local_LLMs_and_API_Providers/) | Local LLMs & APIs | Ollama · LM Studio · OpenRouter · Databricks · Distill | ~3 |
-| [S06](./06_Prompt_Engineering_DSPY_GEPA_COT/) | Prompt Optimisation | DSPy signatures · CoT · MIPROv2 · GEPA | ~4 |
-| [S07](./07_LangChain_Notebooks/) | LangChain | One API for OpenAI · Claude · Gemini · Ollama | ~1 |
-| [S08](./08_Recap/) | Recap | [▶ Presentation](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_PRESENTATION.html) | ~1 |
-| [S09](./09_AgenticCoding_LoopEngineering/) | Agentic Coding | `/goal` vs `/loop` · [guide](./09_AgenticCoding_LoopEngineering/AGENTIC_CODING_GUIDE.md) | ~3 |
-| [S10](./10_RAG/) | **RAG + Memory & Chatbots** | Chunking → hybrid → RAGAS → production chatbot with memory | ~14 + capstone |
-| [S11](./11_LangGraph/) | **LangGraph** | `StateGraph` · HITL · multi-agent helpdesk · ReAct→ToT · SQL agent | ~8 + apps |
+| [Pre-work](./prereq/) | Python, vectors, how NNs learn | 3 Colab notebooks + cheat sheet | |
+| [S00](./00_How_Search_Engine_Works/) | How Search Engines Work | TF-IDF engine from scratch | [Intro](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_genai_intro.pdf) · [Search](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_how_search_engine_works.pdf) · [Claude leak](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_claude_code_leak_summary.pdf) |
+| [S01](./01_Text_to_Numbers/) | Text to Numbers | 5 embedding methods, CineMatch | [Text to Numbers](https://nursnaaz.github.io/zero-to-genai-engineer/01_Text_to_Numbers/slides/M00-S01.pdf) |
+| [S02](./02_Transformer_Architecture/) | Transformer Architecture | Encoder–Decoder in PyTorch, EN→IT | [Transformers](https://nursnaaz.github.io/zero-to-genai-engineer/02_Transformer_Architecture/slides/Transformers.pptx.pdf) |
+| [S03](./03_GPT_Evolution_and_Alignment/) | GPT Evolution & Alignment | GPT from scratch, 11 papers | [GPT papers](https://nursnaaz.github.io/zero-to-genai-engineer/03_GPT_Evolution_and_Alignment/GPT_Papers_Presentation.html) |
+| [S04](./04_BPE_Temperature_Top_K_Top_P/) | BPE & Sampling | Tokenize from scratch, temperature / top-k / top-p | Excel workbooks in the folder |
+| [S05](./05_Local_LLMs_and_API_Providers/) | Local LLMs & APIs | Ollama, LM Studio, OpenRouter, Distill | [Session PDF](https://nursnaaz.github.io/zero-to-genai-engineer/05_Local_LLMs_and_API_Providers/slides.pdf) |
+| [S06](./06_Prompt_Engineering_DSPY_GEPA_COT/) | Prompt Optimisation | DSPy, CoT, MIPROv2, GEPA | |
+| [S07](./07_LangChain_Notebooks/) | LangChain | One API for OpenAI, Claude, Gemini, Ollama | |
+| [S08](./08_Recap/) | Recap | Visual pass of S00–S07 | [Interactive](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_PRESENTATION.html) · [Full text](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_SLIDES.html) |
+| [S09](./09_AgenticCoding_LoopEngineering/) | Agentic Coding | `/goal` vs `/loop` | Guides in the folder |
+| [S10](./10_RAG/) | RAG + Memory & Chatbots | Chunking → hybrid → RAGAS → chatbot with memory | [12 decks](https://nursnaaz.github.io/zero-to-genai-engineer/), also next to each notebook [below](#s10--rag--memory--chatbots-m07--m08--m06) |
+| [S11](./11_LangGraph/) | LangGraph | Graphs, HITL, helpdesk, ReAct→ToT, SQL | [4 decks](https://nursnaaz.github.io/zero-to-genai-engineer/), also next to each day [below](#s11--langgraph-stateful-agents-m10) |
 
 ---
 
 ## 📚 Full syllabus (every session)
 
-Each block lists **what was missing**, **what you open**, and **what you walk out able to do**. Open the session README for setup.
+Setup lives in each session README. If that weekend has slides, they are linked in the section (and again in the [presentation index](https://nursnaaz.github.io/zero-to-genai-engineer/)).
 
 ---
 
 ### Pre-work — Python, math, neural nets
 
-> **Why it exists:** S00 assumes you can read Python and picture a vector. This closes that gap in ~3 hours. Nothing extra.
+> If S00 looks like a stretch, start here. About three hours of Python, vectors, and how a network learns.
 
 | # | Notebook | Topics | Time |
 |---|---|---|---|
 | 01 | [Python for GenAI](./prereq/notebooks/01_python_for_genai.ipynb) | Variables, lists, loops, dicts, f-strings, functions | 60 min |
 | 02 | [Math intuition](./prereq/notebooks/02_math_intuition.ipynb) | Vectors, dot product, probability, softmax | 60 min |
-| 03 | [Neural nets](./prereq/notebooks/03_neural_networks_intuition.ipynb) | How a model learns — in plain English | 60 min |
+| 03 | [Neural nets](./prereq/notebooks/03_neural_networks_intuition.ipynb) | How a model learns, in plain English | 60 min |
 
 Also: [`prereq/cheatsheet.md`](./prereq/cheatsheet.md) — keep it open during S00.
 
@@ -228,9 +228,9 @@ Also: [`prereq/cheatsheet.md`](./prereq/cheatsheet.md) — keep it open during S
 | 01 | [search_engine.ipynb](./00_How_Search_Engine_Works/notebooks/01_search_engine.ipynb) | Tokenise · stop words · stem · inverted index · TF-IDF rank | 30 min |
 | 02 | [tfidf_explained.ipynb](./00_How_Search_Engine_Works/notebooks/02_tfidf_explained.ipynb) | Why raw counts fail · TF × IDF scored by hand | 45 min |
 
-**Slides:** [GenAI intro](./00_How_Search_Engine_Works/slides/00_genai_intro.pdf) · [How search works](./00_How_Search_Engine_Works/slides/00_how_search_engine_works.pdf) · [Claude Code leak](./00_How_Search_Engine_Works/slides/00_claude_code_leak_summary.pdf)
+**Slides:** [GenAI intro](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_genai_intro.pdf) · [How search works](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_how_search_engine_works.pdf) · [Claude Code leak](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_claude_code_leak_summary.pdf)
 
-**Browser:** [How Search Engines Work](https://nursnaaz.github.io/) (open that tutorial from the homepage · 45 min)
+**Browser:** [How Search Engines Work](https://nursnaaz.github.io/) (start it from that homepage, ~45 min)
 
 No API key. Pure Python.
 
@@ -249,8 +249,8 @@ No API key. Pure Python.
 
 **Assignments:** Medium article on the 5 methods · Medium article cosine vs Euclidean · product recommender (Amazon descriptions).
 
-**Slides:** [`slides/M00-S01.pdf`](./01_Text_to_Numbers/slides/M00-S01.pdf)  
-**Browser:** [Cosine Similarity & Movie Recommender](https://nursnaaz.github.io/) (open that tutorial from the homepage)
+**Slides:** [Text to Numbers](https://nursnaaz.github.io/zero-to-genai-engineer/01_Text_to_Numbers/slides/M00-S01.pdf)  
+**Browser:** [Cosine Similarity & Movie Recommender](https://nursnaaz.github.io/) (start it from that homepage)
 
 ---
 
@@ -262,9 +262,10 @@ No API key. Pure Python.
 |---|---|
 | [transformer_from_scratch.ipynb](./02_Transformer_Architecture/notebooks/01_transformer_from_scratch.ipynb) | `InputEmbeddings` · sinusoidal PE · LayerNorm · residual · FFN · 8-head attention · 6-layer encoder + decoder · EN→IT on `opus_books` |
 
-**Paper:** [`Attention_Is_All_You_Need.pdf`](./02_Transformer_Architecture/papers/Attention_Is_All_You_Need.pdf)
+**Paper:** [`Attention_Is_All_You_Need.pdf`](./02_Transformer_Architecture/papers/Attention_Is_All_You_Need.pdf)  
+**Slides:** [Transformer architecture](https://nursnaaz.github.io/zero-to-genai-engineer/02_Transformer_Architecture/slides/Transformers.pptx.pdf)
 
-**Browser tutorials (do these before the notebook):**
+Do these in the browser before the notebook:
 
 | Tutorial | Time |
 |---|---|
@@ -286,7 +287,7 @@ GPU note: building blocks run on CPU; the training loop wants **Colab Pro / H100
 
 | Track | What you open |
 |---|---|
-| Overview slides | [▶ 14-slide paper deck](https://nursnaaz.github.io/zero-to-genai-engineer/03_GPT_Evolution_and_Alignment/GPT_Papers_Presentation.html) |
+| Overview slides | [14-slide paper deck](https://nursnaaz.github.io/zero-to-genai-engineer/03_GPT_Evolution_and_Alignment/GPT_Papers_Presentation.html) |
 | NB2 — map | [TensorFlow minimal GPT](./03_GPT_Evolution_and_Alignment/notebooks/NB2_GPT_TensorFlow_Minimal_Synthetic.ipynb) (~30 min) |
 | NB1 — deep dive | [PyTorch Holmes GPT](./03_GPT_Evolution_and_Alignment/notebooks/NB1_GPT_PyTorch_Detailed_Holmes.ipynb) (~2–3 hr) — char / word / BPE, AdamW, attention heatmaps |
 | App | [`holmes_gpt_ui.py`](./03_GPT_Evolution_and_Alignment/holmes_gpt_ui.py) — Streamlit generator |
@@ -328,7 +329,7 @@ Summaries: [`paper_summaries/`](./03_GPT_Evolution_and_Alignment/paper_summaries
 
 ### S05 — Local LLMs & API Providers
 
-> **MISSING from S04:** One provider's API is a lock-in. This session: run local for free, or switch cloud with one variable.
+> **MISSING from S04:** One provider's API is a lock-in. Run a model on your laptop, or switch cloud providers by changing one variable.
 
 | # | Notebook | Where it runs | Time |
 |---|---|---|---|
@@ -342,6 +343,8 @@ Summaries: [`paper_summaries/`](./03_GPT_Evolution_and_Alignment/paper_summaries
 **Demos:** [`apps/multi_provider_race.py`](./05_Local_LLMs_and_API_Providers/apps/multi_provider_race.py) · [`apps/map_reduce_demo.py`](./05_Local_LLMs_and_API_Providers/apps/map_reduce_demo.py)
 
 **Portfolio:** [Distill](./05_Local_LLMs_and_API_Providers/distill/) — FastAPI + React + Whisper classroom tool ([contribute](https://github.com/nursnaaz/distill/blob/main/CONTRIBUTING.md)).
+
+**Slides:** [S05 session PDF](https://nursnaaz.github.io/zero-to-genai-engineer/05_Local_LLMs_and_API_Providers/slides.pdf)
 
 ---
 
@@ -383,8 +386,8 @@ Providers in the same notebook: `gpt-4o-mini` · Claude Haiku · Gemini Flash-Li
 
 Visual pass of the MISSING chain before agentic coding.
 
-- [▶ Interactive presentation](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_PRESENTATION.html)
-- [▶ Full-text slides](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_SLIDES.html)
+- [Interactive presentation](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_PRESENTATION.html)
+- [Full-text slides](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_SLIDES.html)
 
 ---
 
@@ -403,14 +406,15 @@ Visual pass of the MISSING chain before agentic coding.
 | [`LOOP_ENGINEERING_PLAYBOOK.md`](./09_AgenticCoding_LoopEngineering/loop_demo/LOOP_ENGINEERING_PLAYBOOK.md) | **20+ exercises** |
 | [`LoopEngineering.md`](./09_AgenticCoding_LoopEngineering/loop_demo/LoopEngineering.md) | Theory |
 
-**Demo (external):** [Bullish Stock Scanner V3](https://github.com/nursnaaz/TechnicalStockPrediction/tree/feature/v3-high-precision) — FastAPI + React + **308 tests**, built through spec-driven loops.
+**Demo (external):** [Bullish Stock Scanner V3](https://github.com/nursnaaz/TechnicalStockPrediction/tree/feature/v3-high-precision). FastAPI + React, 308 tests, built through spec-driven loops.
 
 ---
 
 ### S10 — RAG + Memory & Chatbots (M07 + M08 + M06)
 
-> **MISSING from S09:** Agents can write software. They still only know training data. RAG grounds answers in *your* PDFs, policies, and tickets.  
-> **Memory & Chatbots (M06) is not a future folder.** Short-term memory, summarisation, long-term `Store`, condense-question, streaming, guardrails, and HITL shipped inside **S10f + notebooks 13–14**.
+> **MISSING from S09:** Agents can write software. They still only know training data. RAG grounds answers in *your* PDFs, policies, and tickets.
+>
+> Memory & chatbots (M06) live here too: short-term memory, summarisation, long-term `Store`, condense-question, streaming, guardrails, and HITL are in **S10f + notebooks 13–14**.
 
 **Start page:** [`10_RAG/README.md`](./10_RAG/) · notebook index: [`10_RAG/notebooks/README.md`](./10_RAG/notebooks/)
 
@@ -451,7 +455,7 @@ S10g  Retrieval showdown on one Pinecone index
 
 #### Memory & Chatbots — what S10f / 13 / 14 actually teach (M06)
 
-This is the dedicated chatbot curriculum. It lives next to retrieval because production chat *is* RAG + memory.
+The chatbot module sits next to retrieval on purpose. A production bot is RAG plus memory.
 
 | Topic | Where | What you can do after |
 |---|---|---|
@@ -469,15 +473,15 @@ This is the dedicated chatbot curriculum. It lives next to retrieval because pro
 | Same bot + durable memory | [NB14](./10_RAG/notebooks/14_capstone_production_rag_chatbot_memory.ipynb) → [`production_rag_chatbot_memory/`](./10_RAG/notebooks/production_rag_chatbot_memory/) | Memory that lasts after you close the tab |
 | Student labs | [13 STUDENT](./10_RAG/notebooks/13_capstone_production_rag_chatbot_STUDENT.ipynb) · [14 STUDENT](./10_RAG/notebooks/14_capstone_production_rag_chatbot_memory_STUDENT.ipynb) | Same pipeline, TODOs for you |
 
-S11 **reuses** this memory stack (`condense()`, `trim_history()`, checkpointer, `Store`) — it does not re-teach it.
+S11 reuses `condense()`, `trim_history()`, the checkpointer, and `Store`. We don't teach them again.
 
 #### Capstones & extras
 
 | Item | What it is |
 |---|---|
-| [15 — Multimodal RAG](./10_RAG/notebooks/15_multimodal_rag_images.ipynb) ([▶ slides](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_15_multimodal_rag.html)) | Images + text in one index |
-| [16 — MCP helpdesk](./10_RAG/notebooks/16_capstone_mcp_agents_rag.ipynb) | RAG + SQL tools over MCP — **required before S11 Day 3** |
-| **[RAG Studio](./10_RAG/capstone_rag_studio/)** | FastAPI + React — swap retrieval strategies side by side, RAGAS + DeepEval |
+| [15 — Multimodal RAG](./10_RAG/notebooks/15_multimodal_rag_images.ipynb) ([slides](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_15_multimodal_rag.html)) | Images + text in one index |
+| [16 — MCP helpdesk](./10_RAG/notebooks/16_capstone_mcp_agents_rag.ipynb) | RAG + SQL tools over MCP. Required before S11 Day 3. |
+| **[RAG Studio](./10_RAG/capstone_rag_studio/)** ([eval slides](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/capstone_rag_studio/reports/rag_strategy_evaluation_presentation.html)) | FastAPI + React. Swap retrieval strategies side by side, RAGAS + DeepEval. |
 | **[9 group datasets](./10_RAG/student_group_datasets/)** | Real-company briefs (below) |
 
 #### 9 student group datasets (cohort project)
@@ -511,16 +515,16 @@ S11c  Multi-agent orchestrator  required
   ├── S11d  Reasoning patterns  bonus (interview map)
   ├── S11e  SQL agent           bonus (Chinook)
   ├── capstone_agentic_rag/     optional self-correcting RAG
-  └── medium-article-agent/     optional FastAPI + React
+  └── medium-article-agent/     optional FastAPI + React  → https://github.com/nursnaaz/medium-article-agent
 ```
 
-| Day | Open | You will be able to | Time | Slides |
+| Day | Open | What you do | Time | Slides |
 |---|---|---|---|---|
-| **S11a** | [01 — Fundamentals](./11_LangGraph/notebooks/01_langgraph_fundamentals_and_agents.ipynb) | Draw a graph · wire nodes/edges · build ReAct by hand · then `create_agent` · checkpointer · stream | ~2 hr | [▶](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_01_langgraph_fundamentals.html) |
-| **S11b** | [02 — HITL](./11_LangGraph/notebooks/02_human_in_the_loop.ipynb) | `interrupt()` a risky tool · type yes/no · resume the **same** `thread_id` | ~1 hr | [▶](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_02_human_in_the_loop.html) |
-| **S11c** | [03 — Orchestrator](./11_LangGraph/notebooks/03_multi_agent_orchestrator.ipynb) + [app](./11_LangGraph/multi_agent_orchestrator/) | Supervisor · RAG-as-tool · SQL over MCP · ticket writes pause | ~2 hr | taught live from the app |
-| **S11d** | [04 — Patterns](./11_LangGraph/notebooks/04_agent_reasoning_patterns_masterclass.ipynb) | Name **ReAct · Reflection · Reflexion · REWOO · Tree-of-Thoughts · Self-Discover** and when to use each | ~2 hr | [▶](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_04_agent_reasoning_patterns.html) |
-| **S11e** | [05 — SQL agent](./11_LangGraph/notebooks/05_sql_agent_langgraph.ipynb) | Force list-tables → schema → check → run on Chinook | ~1.5 hr | [▶](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_05_sql_agent.html) |
+| **S11a** | [01 — Fundamentals](./11_LangGraph/notebooks/01_langgraph_fundamentals_and_agents.ipynb) | Draw a graph, wire nodes/edges, build ReAct by hand, then `create_agent`, checkpointer, stream | ~2 hr | [fundamentals](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_01_langgraph_fundamentals.html) |
+| **S11b** | [02 — HITL](./11_LangGraph/notebooks/02_human_in_the_loop.ipynb) | `interrupt()` a risky tool, type yes/no, resume the same `thread_id` | ~1 hr | [HITL](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_02_human_in_the_loop.html) |
+| **S11c** | [03 — Orchestrator](./11_LangGraph/notebooks/03_multi_agent_orchestrator.ipynb) + [app](./11_LangGraph/multi_agent_orchestrator/) | Supervisor, RAG-as-tool, SQL over MCP, ticket writes pause | ~2 hr | live from the app |
+| **S11d** | [04 — Patterns](./11_LangGraph/notebooks/04_agent_reasoning_patterns_masterclass.ipynb) | Name ReAct, Reflection, Reflexion, REWOO, Tree-of-Thoughts, Self-Discover, and when to use each | ~2 hr | [patterns](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_04_agent_reasoning_patterns.html) |
+| **S11e** | [05 — SQL agent](./11_LangGraph/notebooks/05_sql_agent_langgraph.ipynb) | Force list-tables → schema → check → run on Chinook | ~1.5 hr | [SQL](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_05_sql_agent.html) |
 
 **API you actually type:** `StateGraph` · `MessagesState` · `ToolNode` · `tools_condition` · `Command` · `interrupt()` · `MemorySaver` · `InMemoryStore` · `create_agent` · `create_supervisor`.
 
@@ -543,52 +547,58 @@ Try: *“What is our refund policy?”* · *“How many open tickets does Jane D
 
 ## 🏗️ Projects you can ship
 
-| Project | Session | Stack | What a recruiter sees |
+| Project | Session | Stack | What it is |
 |---|---|---|---|
-| **[Helpdesk Orchestrator](./11_LangGraph/multi_agent_orchestrator/)** | S11c | LangGraph · Streamlit · MCP | Hierarchical teams, RAG + SQL, write-tools that pause |
-| **[Self-Correcting Agentic RAG](./11_LangGraph/capstone_agentic_rag/)** | S11 extra | LangGraph · RAGAS · Streamlit | Grade → rewrite → groundedness loop → escalate |
-| **[Medium Article Agent](./medium-article-agent/)** | S11 extra | LangGraph · FastAPI · React | Ingest PDF/PPTX/HTML → draft → 6 reviewers → HITL → Markdown |
-| **[RAG Studio](./10_RAG/capstone_rag_studio/)** | S10 | FastAPI · React · RAGAS · DeepEval | A/B retrieval strategies with numbers, not vibes |
-| **[Production RAG chatbot](./10_RAG/notebooks/production_rag_chatbot/)** | S10 | Streamlit · hybrid + rerank | Cited answers over a knowledge base |
-| **[RAG chatbot + memory](./10_RAG/notebooks/production_rag_chatbot_memory/)** | S10 / M06 | Streamlit · checkpointer / Store | Multi-turn support bot that remembers |
-| **[MCP helpdesk server](./10_RAG/notebooks/production_mcp_agents_rag_capstone/)** | S10 extra | MCP · SQL · RAG | Tools an orchestrator can actually call |
-| **[Distill](./05_Local_LLMs_and_API_Providers/distill/)** | S05 | FastAPI · React · Whisper | Classroom assessment; [contribute](https://github.com/nursnaaz/distill/blob/main/CONTRIBUTING.md) |
-| **[CineMatch](./01_Text_to_Numbers/movie_recommender/)** | S01 | FastAPI · React | 5 embedders, same 1,000 movies |
-| **[Holmes GPT](./03_GPT_Evolution_and_Alignment/holmes_gpt_ui.py)** | S03 | PyTorch · Streamlit | A GPT you trained, not an API wrapper |
-| **[Bullish Stock Scanner V3](https://github.com/nursnaaz/TechnicalStockPrediction/tree/feature/v3-high-precision)** | S09 | FastAPI · React · 308 tests | Spec-driven loop engineering in the wild |
+| **[Helpdesk Orchestrator](./11_LangGraph/multi_agent_orchestrator/)** | S11c | LangGraph, Streamlit, MCP | Hierarchical teams, RAG + SQL, write-tools that pause |
+| **[Self-Correcting Agentic RAG](./11_LangGraph/capstone_agentic_rag/)** | S11 extra | LangGraph, RAGAS, Streamlit | Grade → rewrite → groundedness loop → escalate |
+| **[Medium Article Agent](https://github.com/nursnaaz/medium-article-agent)** | S11 extra | LangGraph, FastAPI, React | Ingest PDF/PPTX/HTML → draft → 6 reviewers → HITL → Markdown. [Local copy](./medium-article-agent/) |
+| **[RAG Studio](./10_RAG/capstone_rag_studio/)** | S10 | FastAPI, React, RAGAS, DeepEval | Swap retrieval strategies and compare scores. [Eval slides](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/capstone_rag_studio/reports/rag_strategy_evaluation_presentation.html) |
+| **[Production RAG chatbot](./10_RAG/notebooks/production_rag_chatbot/)** | S10 | Streamlit, hybrid + rerank | Cited answers over a knowledge base |
+| **[RAG chatbot + memory](./10_RAG/notebooks/production_rag_chatbot_memory/)** | S10 / M06 | Streamlit, checkpointer / Store | Multi-turn support bot that remembers |
+| **[MCP helpdesk server](./10_RAG/notebooks/production_mcp_agents_rag_capstone/)** | S10 extra | MCP, SQL, RAG | Tools the S11 orchestrator actually calls |
+| **[Distill](./05_Local_LLMs_and_API_Providers/distill/)** | S05 | FastAPI, React, Whisper | Classroom assessment. [Contribute](https://github.com/nursnaaz/distill/blob/main/CONTRIBUTING.md) |
+| **[CineMatch](./01_Text_to_Numbers/movie_recommender/)** | S01 | FastAPI, React | 5 embedders, same 1,000 movies |
+| **[Holmes GPT](./03_GPT_Evolution_and_Alignment/holmes_gpt_ui.py)** | S03 | PyTorch, Streamlit | A GPT you trained yourself |
+| **[Bullish Stock Scanner V3](https://github.com/nursnaaz/TechnicalStockPrediction/tree/feature/v3-high-precision)** | S09 | FastAPI, React, 308 tests | Spec-driven loop engineering, outside this repo |
 
 ---
 
-## 🎮 Classroom presentations (GitHub Pages)
+## 🎮 Classroom presentations
 
-**Do not open the `.html` files from GitHub’s file tree.** They render as source. Use the hosted Pages URLs below (or the [full deck index](https://nursnaaz.github.io/zero-to-genai-engineer/)).
+GitHub's file view shows HTML source, not slides. Use the links below, or the [full index](https://nursnaaz.github.io/zero-to-genai-engineer/).
 
-Interactive S00–S02 tutorials live on the instructor site: [nursnaaz.github.io](https://nursnaaz.github.io) (open a tutorial from that homepage).
+S00–S02 also have interactive tutorials on [nursnaaz.github.io](https://nursnaaz.github.io). Open those from the homepage.
 
-| Session | Presentation | Link |
-|---|---|---|
-| S03 | GPT papers (14 slides) | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/03_GPT_Evolution_and_Alignment/GPT_Papers_Presentation.html) |
-| S08 | Recap — interactive | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_PRESENTATION.html) |
-| S08 | Recap — full text | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_SLIDES.html) |
-| S10a | Why RAG | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_01_why_rag.html) |
-| S10b | Chunking (LangChain) | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_02_ingestion_chunking.html) |
-| S10b | Chunking (LlamaIndex) | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_03_ingestion_chunking_llamaindex.html) |
-| S10c | Embeddings | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_04_embeddings.html) |
-| S10c | Vector databases | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_05_vector_databases.html) |
-| S10c | Revision 01–05 | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/revision_notebooks_01_to_05.html) |
-| S10d | Why BM25 | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_06_why_bm25.html) |
-| S10d | Hybrid search | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_07_why_hybrid.html) |
-| S10d | Reranking | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_08_why_reranking.html) |
-| S10d | Full pipeline recap | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_09_full_pipeline_recap.html) |
-| S10f | Production chatbots / memory | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_11_production_chatbots.html) |
-| S10 extra | Multimodal RAG | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_15_multimodal_rag.html) |
-| S10 extra | RAG Studio evaluation report | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/capstone_rag_studio/reports/rag_strategy_evaluation_presentation.html) |
-| S11a | LangGraph fundamentals | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_01_langgraph_fundamentals.html) |
-| S11b | Human-in-the-loop | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_02_human_in_the_loop.html) |
-| S11d | Reasoning patterns | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_04_agent_reasoning_patterns.html) |
-| S11e | SQL agent | [▶ Open](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_05_sql_agent.html) |
+| Session | Presentation |
+|---|---|
+| S00 | [GenAI intro](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_genai_intro.pdf) (PDF) |
+| S00 | [How search engines work](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_how_search_engine_works.pdf) (PDF) |
+| S00 | [Claude Code leak](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_claude_code_leak_summary.pdf) (PDF) |
+| S01 | [Text to Numbers](https://nursnaaz.github.io/zero-to-genai-engineer/01_Text_to_Numbers/slides/M00-S01.pdf) (PDF) |
+| S02 | [Transformer architecture](https://nursnaaz.github.io/zero-to-genai-engineer/02_Transformer_Architecture/slides/Transformers.pptx.pdf) (PDF) |
+| S03 | [GPT papers](https://nursnaaz.github.io/zero-to-genai-engineer/03_GPT_Evolution_and_Alignment/GPT_Papers_Presentation.html) (14 slides) |
+| S05 | [Local LLMs & APIs](https://nursnaaz.github.io/zero-to-genai-engineer/05_Local_LLMs_and_API_Providers/slides.pdf) (PDF) |
+| S08 | [Recap, interactive](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_PRESENTATION.html) |
+| S08 | [Recap, full text](https://nursnaaz.github.io/zero-to-genai-engineer/08_Recap/RECAP_SLIDES.html) |
+| S10a | [Why RAG](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_01_why_rag.html) |
+| S10b | [Chunking (LangChain)](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_02_ingestion_chunking.html) |
+| S10b | [Chunking (LlamaIndex)](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_03_ingestion_chunking_llamaindex.html) |
+| S10c | [Embeddings](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_04_embeddings.html) |
+| S10c | [Vector databases](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_05_vector_databases.html) |
+| S10c | [Revision 01–05](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/revision_notebooks_01_to_05.html) |
+| S10d | [Why BM25](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_06_why_bm25.html) |
+| S10d | [Hybrid search](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_07_why_hybrid.html) |
+| S10d | [Reranking](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_08_why_reranking.html) |
+| S10d | [Full pipeline recap](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_09_full_pipeline_recap.html) |
+| S10f | [Production chatbots / memory](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_11_production_chatbots.html) |
+| S10 extra | [Multimodal RAG](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_15_multimodal_rag.html) |
+| S10 extra | [RAG Studio evaluation](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/capstone_rag_studio/reports/rag_strategy_evaluation_presentation.html) |
+| S11a | [LangGraph fundamentals](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_01_langgraph_fundamentals.html) |
+| S11b | [Human-in-the-loop](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_02_human_in_the_loop.html) |
+| S11d | [Reasoning patterns](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_04_agent_reasoning_patterns.html) |
+| S11e | [SQL agent](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_05_sql_agent.html) |
 
-S11c (multi-agent orchestrator) has no HTML deck — run the [Streamlit app](./11_LangGraph/multi_agent_orchestrator/).
+S04, S06, S07, S09, S10e, and S10g are notebook- or guide-led. S11c is the [Streamlit orchestrator](./11_LangGraph/multi_agent_orchestrator/).
 
 ---
 
@@ -602,7 +612,7 @@ S11c (multi-agent orchestrator) has no HTML deck — run the [Streamlit app](./1
 | Deep learning | PyTorch · TensorFlow/Keras | S02–S03 |
 | Tokenisation / sampling | BPE from scratch · tiktoken · temperature / top-k / top-p | S04 |
 | Cloud LLMs | OpenAI · Anthropic · Gemini | S04–S07 |
-| Local / multi-model | Ollama · LM Studio · OpenRouter · Databricks | S05 |
+| Local / multi-model | Ollama · LM Studio · OpenRouter · Databricks | [S05](./05_Local_LLMs_and_API_Providers/) |
 | Prompt compilers | DSPy (LabeledFewShot · Bootstrap · MIPROv2 · GEPA) | S06 |
 | Orchestration | LangChain LCEL · `create_agent` | S07, S10f |
 | Vector stores | FAISS · Chroma · Pinecone | S10c |
@@ -610,8 +620,10 @@ S11c (multi-agent orchestrator) has no HTML deck — run the [Streamlit app](./1
 | Rerank | Cross-encoder · FlashRank · Cohere | S10d |
 | Eval | RAGAS · DeepEval | S10e |
 | Memory | Checkpointer · token trim · summarisation · `Store` · condense-question | **S10f (M06)** |
-| Agents / graphs | LangGraph · MCP · `create_supervisor` | S10 NB16, S11 |
-| UI | Streamlit · FastAPI · React *(selected projects)* | S01+ |
+| Guardrails | Input/output screens, groundedness refusal, healthcare diagnosis refusal | [NB11](./10_RAG/notebooks/11_production_ready_chatbots.ipynb), [healthcare brief](./10_RAG/student_group_datasets/05_healthcare/) |
+| Agents / graphs | LangGraph · MCP · `create_supervisor` | [NB16](./10_RAG/notebooks/16_capstone_mcp_agents_rag.ipynb), S11 |
+| LlamaIndex | Chunking (same ideas as LangChain NB02) | [NB03](./10_RAG/notebooks/03_ingestion_and_chunking_llamaindex.ipynb) |
+| UI / deploy | Streamlit · FastAPI · React · Docker Compose | S01+ · [Medium article agent](https://github.com/nursnaaz/medium-article-agent) |
 
 ---
 
@@ -619,35 +631,35 @@ S11c (multi-agent orchestrator) has no HTML deck — run the [Streamlit app](./1
 
 | Status | Modules |
 |---|---|
-| ✅ **Shipped in this repo** | **M00–M08 · M10** (sessions **S00–S11**) |
-| ✅ **M06 Memory & Chatbots** | Taught inside **S10f + NB13/14** — not a separate weekend |
-| ⏸ **M09 LangChain Agents** | ReAct / `ToolNode` / `create_agent` already in **S11a** |
-| 🔜 **Still ahead** | CrewAI · deeper MCP productisation · docs/code/multimodal domain apps · FastAPI deploy · LLMOps · guardrails · LoRA · LlamaIndex systems · capstone |
+| ✅ **Shipped in this repo** | **M00–M10 · M12 · M15 · M16 · M18 · M20** (sessions **S00–S11**) |
+| ✅ **M06 Memory & Chatbots** | Also done in **S10** (notebooks 11, 13, 14) |
+| ✅ **M09 LangChain Agents** | Also done in **S11a** (`ToolNode`, `create_agent`, ReAct) |
+| 🔜 **Still ahead** | CrewAI · dedicated document/code modules · LLMOps · LoRA · business capstone |
 
-| Module | Topic | Covered in | Status |
-|---|---|---|---|
-| M00 | Foundations: Search → Text → Transformers → GPT | S00–S03 | ✅ |
-| M01 | Tokenization & sampling | S04 | ✅ |
-| M02 | Local LLMs & API providers | S05 | ✅ |
-| M03 | Prompt engineering + LangChain | S06a/b + S07 | ✅ |
-| M04 | MIPROv2 & GEPA | S06c/d | ✅ |
-| M05 | Agentic coding & loop engineering | S09 | ✅ |
-| **M06** | **Memory & chatbots** | **S10f · NB11 · NB13 · NB14** | ✅ absorbed |
-| M07 | RAG basics | S10a–c | ✅ |
-| M08 | Production RAG | S10d–g + extras | ✅ |
-| M09 | LangChain agents | S11a (`ToolNode` / `create_agent`) | ⏸ inside S11 |
-| M10 | LangGraph | S11a–e | ✅ |
-| M11 | CrewAI | — | 🔜 |
-| M12 | MCP (product / multi-server) | S10 NB16 + S11c start this | 🔜 expand |
-| M13 | Document intelligence | S10 ingestion is the start | 🔜 |
-| M14 | Code intelligence | — | 🔜 |
-| M15 | Multimodal (beyond NB15) | S10 NB15 | 🔜 expand |
-| M16 | FastAPI + Docker deploy | Distill / RAG Studio / Medium agent already practice this | 🔜 |
-| M17 | LLMOps & evaluation | S10e RAGAS/DeepEval · LangSmith in S10f | 🔜 |
-| M18 | Guardrails & safety | S10f + healthcare refusal brief | 🔜 |
-| M19 | Fine-tuning (LoRA / QLoRA) | S03 DPO paper is the theory | 🔜 |
-| M20 | LlamaIndex knowledge systems | S10b NB03 is the start | 🔜 |
-| M21–M22 | Domain + business capstone | 9 RAG group briefs are the rehearsal | 🔜 |
+| Module | Topic | Covered in | Presentation | Status |
+|---|---|---|---|---|
+| M00 | Foundations: Search → Text → Transformers → GPT | S00–S03 | [S00 PDFs](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_how_search_engine_works.pdf) · [S01](https://nursnaaz.github.io/zero-to-genai-engineer/01_Text_to_Numbers/slides/M00-S01.pdf) · [S02](https://nursnaaz.github.io/zero-to-genai-engineer/02_Transformer_Architecture/slides/Transformers.pptx.pdf) · [S03 GPT papers](https://nursnaaz.github.io/zero-to-genai-engineer/03_GPT_Evolution_and_Alignment/GPT_Papers_Presentation.html) | ✅ |
+| M01 | Tokenization & sampling | S04 | — | ✅ |
+| M02 | Local LLMs & multi-model APIs | [S05](./05_Local_LLMs_and_API_Providers/) — [NB1](./05_Local_LLMs_and_API_Providers/notebooks/NB1_multi_provider_api_calls.ipynb) (OpenAI, Gemini, Anthropic, Ollama, OpenRouter, Databricks), [NB4 OpenRouter](./05_Local_LLMs_and_API_Providers/notebooks/NB4_OpenRouter_Multi_Provider.ipynb), [race app](./05_Local_LLMs_and_API_Providers/apps/multi_provider_race.py) | [S05 PDF](https://nursnaaz.github.io/zero-to-genai-engineer/05_Local_LLMs_and_API_Providers/slides.pdf) | ✅ |
+| M03 | Prompt engineering + LangChain | S06a/b + S07 | — | ✅ |
+| M04 | MIPROv2 & GEPA | S06c/d | — | ✅ |
+| M05 | Agentic coding & loop engineering | S09 | — | ✅ |
+| M06 | Memory & chatbots | Also done in S10f, [NB11](./10_RAG/notebooks/11_production_ready_chatbots.ipynb), [NB13](./10_RAG/notebooks/13_capstone_production_rag_chatbot.ipynb), [NB14](./10_RAG/notebooks/14_capstone_production_rag_chatbot_memory.ipynb) | [Production chatbots](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_11_production_chatbots.html) | ✅ in S10 |
+| M07 | RAG basics | S10a–c | [Why RAG](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_01_why_rag.html) · [chunking](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_02_ingestion_chunking.html) · [LlamaIndex](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_03_ingestion_chunking_llamaindex.html) · [embeddings](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_04_embeddings.html) · [vector DBs](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_05_vector_databases.html) | ✅ |
+| M08 | Production RAG | S10d–g + extras | [BM25](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_06_why_bm25.html) · [hybrid](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_07_why_hybrid.html) · [rerank](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_08_why_reranking.html) · [pipeline](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_09_full_pipeline_recap.html) · [multimodal](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_15_multimodal_rag.html) | ✅ |
+| M09 | LangChain agents | Also done in [S11a](./11_LangGraph/notebooks/01_langgraph_fundamentals_and_agents.ipynb) (`ToolNode`, `create_agent`, ReAct by hand) | [Fundamentals](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_01_langgraph_fundamentals.html) | ✅ in S11 |
+| M10 | LangGraph | S11a–e | [Fundamentals](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_01_langgraph_fundamentals.html) · [HITL](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_02_human_in_the_loop.html) · [patterns](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_04_agent_reasoning_patterns.html) · [SQL](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_05_sql_agent.html) | ✅ |
+| M11 | CrewAI | | | 🔜 |
+| M12 | MCP | [NB16](./10_RAG/notebooks/16_capstone_mcp_agents_rag.ipynb) · [MCP helpdesk server](./10_RAG/notebooks/production_mcp_agents_rag_capstone/) · [S11c orchestrator](./11_LangGraph/multi_agent_orchestrator/) (SQL + RAG tools over MCP) | | ✅ |
+| M13 | Document intelligence | S10 ingestion is the start | | 🔜 |
+| M14 | Code intelligence | | | 🔜 |
+| M15 | Multimodal | [NB15](./10_RAG/notebooks/15_multimodal_rag_images.ipynb) | [Multimodal RAG](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_15_multimodal_rag.html) | ✅ |
+| M16 | FastAPI + Docker | [CineMatch](./01_Text_to_Numbers/movie_recommender/) · [Distill](./05_Local_LLMs_and_API_Providers/distill/) · [RAG Studio](./10_RAG/capstone_rag_studio/) · [Medium article agent](https://github.com/nursnaaz/medium-article-agent) (`Dockerfile` + Compose) | | ✅ |
+| M17 | LLMOps & evaluation | S10e RAGAS/DeepEval, LangSmith in S10f | | 🔜 |
+| M18 | Guardrails & safety | [NB11](./10_RAG/notebooks/11_production_ready_chatbots.ipynb) · [production chatbot](./10_RAG/notebooks/production_rag_chatbot/) · [healthcare brief](./10_RAG/student_group_datasets/05_healthcare/) (must refuse diagnosis) | [Production chatbots](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_11_production_chatbots.html) | ✅ |
+| M19 | Fine-tuning (LoRA / QLoRA) | S03 DPO paper is the theory | | 🔜 |
+| M20 | LlamaIndex | [NB03](./10_RAG/notebooks/03_ingestion_and_chunking_llamaindex.ipynb) | [LlamaIndex chunking](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_03_ingestion_chunking_llamaindex.html) | ✅ |
+| M21–M22 | Domain + business capstone | [9 RAG group briefs](./10_RAG/student_group_datasets/) are the rehearsal | | 🔜 |
 
 ---
 
@@ -658,7 +670,7 @@ S11c (multi-agent orchestrator) has no HTML deck — run the [Streamlit app](./1
 
 | Date | What shipped |
 |---|---|
-| 2026-08-23 | **S11d–e** — reasoning patterns + SQL agent. Portfolio: [`medium-article-agent/`](./medium-article-agent/) |
+| 2026-08-23 | **S11d–e** — reasoning patterns + SQL agent. Portfolio: [medium-article-agent](https://github.com/nursnaaz/medium-article-agent) |
 | 2026-08-22 | **S11b–c** — HITL notebook; hierarchical helpdesk orchestrator |
 | 2026-08-15 | **S11a** — LangGraph fundamentals & agents |
 | 2026-07-19 | S10f–g — production chatbots (memory) + Pinecone showdown |

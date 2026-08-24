@@ -1,0 +1,35 @@
+flowchart TD
+    ingest[ingest] --> plan[plan]
+    plan --> webResearch[web_research optional]
+    webResearch --> draft[draft]
+    draft --> imageGen[image_gen]
+    imageGen --> imageReview[image_review]
+    imageReview -->|rejected and under cap| imageRedraw[image_redraw]
+    imageRedraw --> imageReview
+    imageReview -->|passed or cap| fanout{six reviewers}
+    fanout --> rTech[reviewer_technical]
+    fanout --> rStyle[reviewer_style]
+    fanout --> rStruct[reviewer_structure]
+    fanout --> rGround[reviewer_grounding]
+    fanout --> rReader[reviewer_reader]
+    fanout --> rSkills[reviewer_skills]
+    rTech --> supervisor[supervisor]
+    rStyle --> supervisor
+    rStruct --> supervisor
+    rGround --> supervisor
+    rReader --> supervisor
+    rSkills --> supervisor
+    supervisor -->|findings open| rewrite[rewrite]
+    rewrite --> voice[rewrite_voice]
+    voice -->|specialist findings| fanout
+    voice -->|editor defects| editorScore
+    supervisor -->|converged stalled or cap| editorScore[editor_score]
+    editorScore -->|score under 8| rewrite
+    editorScore -->|score at least 8 or retry cap| headline[headline]
+    headline --> stylePass[style_pass]
+    stylePass --> finalRewrite[final_rewrite]
+    finalRewrite --> groundingRecheck[grounding_recheck]
+    groundingRecheck -->|drift| finalRewrite
+    groundingRecheck -->|clean| humanGate[human_gate interrupt]
+    humanGate -->|approved| exportNode[export]
+    humanGate -->|changes| rewrite

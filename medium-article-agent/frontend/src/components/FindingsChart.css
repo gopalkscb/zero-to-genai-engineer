@@ -1,0 +1,79 @@
+.fc-wrap {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 16px 8px;
+  box-shadow: 0 8px 24px rgba(15, 15, 15, 0.06);
+}
+
+.fc-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  color: #242424;
+  margin-bottom: 4px;
+}
+
+.fc-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fc-grid {
+  stroke: #eee;
+}
+
+.fc-axis,
+.fc-x,
+.fc-val {
+  fill: #6b6b6b;
+  font-size: 11px;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+}
+
+.fc-val {
+  fill: #1a8917;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fc-val.is-on,
+.fc-dot.is-on {
+  fill: #0b5c0a;
+}
+
+.fc-x,
+.fc-dot {
+  cursor: pointer;
+}
+
+.fc-help,
+.fc-readout {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: #6b6b6b;
+  line-height: 1.4;
+}
+
+.fc-readout {
+  margin: 4px 4px 8px;
+  color: #242424;
+}
+
+.fc-area {
+  fill: rgba(26, 137, 23, 0.12);
+}
+
+.fc-line {
+  fill: none;
+  stroke: #1a8917;
+  stroke-width: 2.4;
+}
+
+.fc-dot {
+  fill: #1a8917;
+}
+
+.fc-empty {
+  color: #6b6b6b;
+  font-style: italic;
+}

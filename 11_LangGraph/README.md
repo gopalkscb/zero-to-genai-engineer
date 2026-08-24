@@ -41,9 +41,7 @@ pip install -r requirements.txt
 
 Then open [`notebooks/01_langgraph_fundamentals_and_agents.ipynb`](notebooks/01_langgraph_fundamentals_and_agents.ipynb).
 
-Classroom slides (**GitHub Pages — do not open the raw `.html` in the repo**): [all decks](https://nursnaaz.github.io/zero-to-genai-engineer/) · [fundamentals](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_01_langgraph_fundamentals.html) · [HITL](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_02_human_in_the_loop.html) · [patterns](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_04_agent_reasoning_patterns.html) · [SQL](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_05_sql_agent.html)
-
-Day 3 is taught live from the notebook + Streamlit app (no separate HTML deck).
+Class slides: [all decks](https://nursnaaz.github.io/zero-to-genai-engineer/). Each day also has a link in the table below. Day 3 is the notebook + Streamlit app.
 
 ---
 
@@ -64,16 +62,16 @@ S11c  Multi-agent orchestrator  required
   ├── S11d  Reasoning patterns  bonus (interview map + papers)
   ├── S11e  SQL agent           bonus (Chinook, forced schema lookup)
   ├── capstone_agentic_rag/     optional (self-correcting RAG)
-  └── medium-article-agent/     optional (FastAPI + React editorial graph)
+  └── [medium-article-agent](https://github.com/nursnaaz/medium-article-agent)     optional FastAPI + React
 ```
 
-| Day | Open | You will be able to | Time |
+| Day | Open | What you do | Time |
 |---|---|---|---|
-| **S11a** | [01 — Fundamentals](notebooks/01_langgraph_fundamentals_and_agents.ipynb) | Draw a graph, wire nodes/edges, build ReAct by hand, then call `create_agent` | ~2 hr |
-| **S11b** | [02 — HITL](notebooks/02_human_in_the_loop.ipynb) | Pause a risky tool, type yes/no, resume the **same** `thread_id` | ~1 hr |
+| **S11a** | [01 — Fundamentals](notebooks/01_langgraph_fundamentals_and_agents.ipynb) | Draw a graph, wire nodes/edges, build ReAct by hand, then call `create_agent`. [Slides](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_01_langgraph_fundamentals.html) | ~2 hr |
+| **S11b** | [02 — HITL](notebooks/02_human_in_the_loop.ipynb) | Pause a risky tool, type yes/no, resume the same `thread_id`. [Slides](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_02_human_in_the_loop.html) | ~1 hr |
 | **S11c** | [03 — Orchestrator](notebooks/03_multi_agent_orchestrator.ipynb) then [the app](multi_agent_orchestrator/) | Route a ticket to RAG, web, or SQL; block writes until a human approves | ~2 hr |
-| **S11d** | [04 — Patterns](notebooks/04_agent_reasoning_patterns_masterclass.ipynb) | Name ReAct / Reflection / Reflexion / REWOO / ToT / Self-Discover and when to use each | ~2 hr |
-| **S11e** | [05 — SQL agent](notebooks/05_sql_agent_langgraph.ipynb) | Force list-tables → schema → check → run on Chinook (downloads DB on first run) | ~1.5 hr |
+| **S11d** | [04 — Patterns](notebooks/04_agent_reasoning_patterns_masterclass.ipynb) | Name ReAct / Reflection / Reflexion / REWOO / ToT / Self-Discover and when to use each. [Slides](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_04_agent_reasoning_patterns.html) | ~2 hr |
+| **S11e** | [05 — SQL agent](notebooks/05_sql_agent_langgraph.ipynb) | Force list-tables → schema → check → run on Chinook (downloads DB on first run). [Slides](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_05_sql_agent.html) | ~1.5 hr |
 
 Full notebook index: [`notebooks/README.md`](notebooks/README.md).
 
@@ -99,7 +97,7 @@ Full notebook index: [`notebooks/README.md`](notebooks/README.md).
 └── capstone_agentic_rag/             ← optional self-correcting RAG
 ```
 
-Sibling portfolio (same LangGraph skills, product UI): [`../medium-article-agent/`](../medium-article-agent/).
+Sibling portfolio (same LangGraph skills, product UI): [medium-article-agent](https://github.com/nursnaaz/medium-article-agent) ([local copy](../medium-article-agent/)).
 
 ---
 
@@ -182,12 +180,11 @@ pytest tests/test_graph.py -v     # no API key — fakes LLM + retriever
 
 ### Optional — Medium article agent
 
-Ingest PDF / PPTX / HTML / notebooks → draft → parallel reviewers → HITL → export Markdown. Does **not** auto-publish to Medium.
+Ingest PDF / PPTX / HTML / notebooks → draft → parallel reviewers → HITL → export Markdown. Does not auto-publish to Medium.
 
-```bash
-cd medium-article-agent
-# see that folder's README for backend + frontend
-```
+**Standalone repo (clone this for the portfolio):** [nursnaaz/medium-article-agent](https://github.com/nursnaaz/medium-article-agent)
+
+Same code in this course at [`../medium-article-agent/`](../medium-article-agent/).
 
 ---
 
@@ -203,7 +200,7 @@ cd medium-article-agent
 
 ## ➡️ What's next
 
-S11 gives you **control flow**. Memory & chatbots already shipped in **S10f / notebooks 13–14** (M06). What's still ahead in the 23-module map: CrewAI teams, deeper MCP productisation, domain apps, deploy, and LLMOps — see the [root syllabus](../README.md#-where-the-23-module-syllabus-stands).
+S11 gives you **control flow**. Memory, MCP, guardrails, and the FastAPI apps are already in S10 / earlier sessions. What's still ahead: CrewAI, dedicated document/code modules, LLMOps, LoRA — see the [root syllabus](../README.md#-where-the-23-module-syllabus-stands).
 
 Instructors: [`TEACHING.md`](TEACHING.md) (how to teach + every S10 tool reused here).
 
@@ -211,6 +208,6 @@ Instructors: [`TEACHING.md`](TEACHING.md) (how to teach + every S10 tool reused 
 
 <div align="center">
 
-**Course nav:** [← S10 RAG + Memory](../10_RAG/) · [All sessions](../README.md) · Next: CrewAI / production (see syllabus)
+**Course nav:** [← S10 RAG + Memory](../10_RAG/) · [All sessions](../README.md) · Next: CrewAI (see syllabus)
 
 </div>

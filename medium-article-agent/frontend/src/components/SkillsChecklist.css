@@ -1,0 +1,87 @@
+.sk-panel {
+  background: #fff;
+  border: 1px solid #e8e4da;
+  padding: 22px 24px 8px;
+}
+
+.sk-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 8px;
+}
+
+.sk-kicker {
+  margin: 0 0 4px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a8478;
+}
+
+.sk-head h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sk-score {
+  margin: 0;
+  font-size: 13px;
+  color: #1a8917;
+}
+
+.sk-score.is-open {
+  color: #9a6700;
+}
+
+.sk-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sk-list li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid #eeeae1;
+}
+
+.sk-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.is-pass .sk-mark {
+  background: #e7f4e6;
+  color: #1a8917;
+}
+
+.is-fail .sk-mark {
+  background: #fbeaea;
+  color: #c62828;
+}
+
+.sk-list strong {
+  display: block;
+  font-size: 14px;
+}
+
+.sk-list p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #5c5850;
+}
+
+.sk-fix {
+  color: #7a3e00 !important;
+}

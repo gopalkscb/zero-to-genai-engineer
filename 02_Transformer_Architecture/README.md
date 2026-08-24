@@ -109,9 +109,7 @@ That gap — **how to use a pre-trained LLM efficiently** — is what the next s
 
 ## Slides
 
-| File | Contents |
-|---|---|
-| [Transformers.pptx.pdf](slides/Transformers.pptx.pdf) | Full Transformer architecture walkthrough — attention, encoder-decoder, positional encoding |
+Class slides: [Transformer architecture](https://nursnaaz.github.io/zero-to-genai-engineer/02_Transformer_Architecture/slides/Transformers.pptx.pdf). PDF also lives in [`slides/`](slides/).
 
 ---
 
