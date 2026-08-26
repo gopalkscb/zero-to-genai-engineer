@@ -230,7 +230,8 @@ Also: [`prereq/cheatsheet.md`](./prereq/cheatsheet.md) — keep it open during S
 
 **Slides:** [GenAI intro](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_genai_intro.pdf) · [How search works](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_how_search_engine_works.pdf) · [Claude Code leak](https://nursnaaz.github.io/zero-to-genai-engineer/00_How_Search_Engine_Works/slides/00_claude_code_leak_summary.pdf)
 
-**Browser:** [How Search Engines Work](https://nursnaaz.github.io/tutorial/how-search-engines-work) (~45 min, no API key)
+**Browser:** [How Search Engines Work](https://nursnaaz.github.io/tutorial/how-search-engines-work) (~45 min, no API key)  
+**Write-up:** [How I Taught 100 Students to Build Google's Core Algorithm in 30 Minutes](https://medium.com/learning-data/how-i-taught-100-students-to-build-googles-core-algorithm-in-30-minutes-3166e6cc8636)
 
 No API key. Pure Python.
 
@@ -250,7 +251,8 @@ No API key. Pure Python.
 **Assignments:** Medium article on the 5 methods · Medium article cosine vs Euclidean · product recommender (Amazon descriptions).
 
 **Slides:** [Text to Numbers](https://nursnaaz.github.io/zero-to-genai-engineer/01_Text_to_Numbers/slides/M00-S01.pdf)  
-**Browser:** [Cosine Similarity & Movie Recommender](https://nursnaaz.github.io/tutorial/cosine-similarity-movie-recommender)
+**Browser:** [Cosine Similarity & Movie Recommender](https://nursnaaz.github.io/tutorial/cosine-similarity-movie-recommender)  
+**Write-up:** [Words Don't Have Meaning. Sentences Do.](https://medium.com/generative-ai/words-dont-have-meaning-sentences-do-ef5b7745eac2)
 
 ---
 
@@ -267,12 +269,12 @@ No API key. Pure Python.
 
 Do these in the browser before the notebook:
 
-| Tutorial | Time |
-|---|---|
-| [Self-Attention](https://nursnaaz.github.io/tutorial/self-attention) | 30 min |
-| [Positional Encoding](https://nursnaaz.github.io/tutorial/positional-encoding) | 35 min |
-| [Multi-Head Attention](https://nursnaaz.github.io/tutorial/multi-head-attention) | 60 min |
-| [Transformer code](https://nursnaaz.github.io/tutorial/transformer-code) | 60 min |
+| Tutorial | Time | Write-up |
+|---|---|---|
+| [Self-Attention](https://nursnaaz.github.io/tutorial/self-attention) | 30 min | [Computed by hand](https://medium.com/generative-ai/i-ran-the-math-that-powers-chatgpt-heres-what-i-found-2fc45eecec59) |
+| [Positional Encoding](https://nursnaaz.github.io/tutorial/positional-encoding) | 35 min | |
+| [Multi-Head Attention](https://nursnaaz.github.io/tutorial/multi-head-attention) | 60 min | |
+| [Transformer code](https://nursnaaz.github.io/tutorial/transformer-code) | 60 min | |
 
 **Assets:** `SelfAttentionFull.mp4` · attention GIF · architecture spreadsheet.
 
@@ -326,7 +328,8 @@ Summaries: [`paper_summaries/`](./03_GPT_Evolution_and_Alignment/paper_summaries
 | NB1 | [BPE Tokenization](./04_BPE_Temperature_Top_K_Top_P/notebooks/NB1_BPE_Tokenization.ipynb) | `build_bpe_vocab()` · `tokenize_with_bpe()` · tiktoken GPT-2 vs GPT-4 | 45 min |
 | NB2 | [Temperature / Top-K / Top-P](./04_BPE_Temperature_Top_K_Top_P/notebooks/NB2_Temperature_TopK_TopP.ipynb) | `apply_temperature()` · filters · Gemini experiments · `sample_token()` in the correct order | 45 min |
 
-**Browser (do these before the Excel / notebooks):** [Tokens / BPE](https://nursnaaz.github.io/tutorial/tokens-are-money) · [Temperature, top-k, top-p](https://nursnaaz.github.io/tutorial/sampling-temperature-topk-topp) · [Context window budget](https://nursnaaz.github.io/tutorial/context-window-budget)
+**Browser (do these before the Excel / notebooks):** [Tokens / BPE](https://nursnaaz.github.io/tutorial/tokens-are-money) · [Temperature, top-k, top-p](https://nursnaaz.github.io/tutorial/sampling-temperature-topk-topp) · [Context window budget](https://nursnaaz.github.io/tutorial/context-window-budget)  
+**Write-up (BPE):** [One Word. Two Tokens. Here Is How BPE Builds Them.](https://medium.com/@nursnaaz/one-word-two-tokens-here-is-how-bpe-builds-them-031f23614e65)
 
 **Order that matters:** temperature → top-K → top-P → sample. Getting this wrong is a common production bug.
 
@@ -431,7 +434,8 @@ Visual pass of the MISSING chain before agentic coding.
 
 **Start page:** [`10_RAG/README.md`](./10_RAG/) · notebook index: [`10_RAG/notebooks/README.md`](./10_RAG/notebooks/)
 
-**Browser:** [Tiny RAG](https://nursnaaz.github.io/tutorial/tiny-rag) · [Chunking](https://nursnaaz.github.io/tutorial/chunking-intuition) · [Hybrid + RRF](https://nursnaaz.github.io/tutorial/hybrid-search-rrf) · [Citations / refusals](https://nursnaaz.github.io/tutorial/citations-and-refusals) · [RAG injection](https://nursnaaz.github.io/tutorial/rag-injection-guardrails) · [Chat memory](https://nursnaaz.github.io/tutorial/chatbots-forget) · [Production challenges](https://nursnaaz.github.io/tutorial/production-challenges)
+**Browser:** [Tiny RAG](https://nursnaaz.github.io/tutorial/tiny-rag) · [Chunking](https://nursnaaz.github.io/tutorial/chunking-intuition) · [Hybrid + RRF](https://nursnaaz.github.io/tutorial/hybrid-search-rrf) · [Citations / refusals](https://nursnaaz.github.io/tutorial/citations-and-refusals) · [RAG injection](https://nursnaaz.github.io/tutorial/rag-injection-guardrails) · [Chat memory](https://nursnaaz.github.io/tutorial/chatbots-forget) · [Production challenges](https://nursnaaz.github.io/tutorial/production-challenges)  
+**Write-up (Tiny RAG):** [I Asked ChatGPT About Our Gym's Refund Policy. It Invented One.](https://medium.com/@nursnaaz/i-asked-chatgpt-about-our-gyms-refund-policy-it-invented-one-bbf28cdf7ecc)
 
 ```text
 S10a  Why RAG
@@ -636,22 +640,36 @@ Live captures of the apps in this repo (same style as the [Medium article agent]
 
 GitHub's file view shows HTML source, not slides. Use the links below, or the [full index](https://nursnaaz.github.io/zero-to-genai-engineer/).
 
-S00–S11 browser labs (no API key) live on [nursnaaz.github.io](https://nursnaaz.github.io). Pairing is the same table as on that site’s README:
+S00–S11 browser labs (no API key) live on [nursnaaz.github.io](https://nursnaaz.github.io). Same pairing as that site’s README. Medium write-ups are listed only when the article is live.
 
-| Session | Lab |
-|---|---|
-| S00 | [How search engines work](https://nursnaaz.github.io/tutorial/how-search-engines-work) |
-| S01 | [Cosine similarity & movie recommender](https://nursnaaz.github.io/tutorial/cosine-similarity-movie-recommender) |
-| S02 | [Self-attention](https://nursnaaz.github.io/tutorial/self-attention) · [Positional encoding](https://nursnaaz.github.io/tutorial/positional-encoding) · [Multi-head attention](https://nursnaaz.github.io/tutorial/multi-head-attention) · [Transformer code](https://nursnaaz.github.io/tutorial/transformer-code) |
-| S03 | [BERT classification](https://nursnaaz.github.io/tutorial/bert-classification) |
-| S04 | [Tokens / BPE](https://nursnaaz.github.io/tutorial/tokens-are-money) · [Sampling](https://nursnaaz.github.io/tutorial/sampling-temperature-topk-topp) · [Context window](https://nursnaaz.github.io/tutorial/context-window-budget) |
-| S05 | [First LLM call](https://nursnaaz.github.io/tutorial/first-llm-call) · [Local vs cloud](https://nursnaaz.github.io/tutorial/local-vs-cloud) |
-| S06 | [Zero-shot / few-shot / CoT](https://nursnaaz.github.io/tutorial/prompt-anatomy) · [JSON or bust](https://nursnaaz.github.io/tutorial/json-or-bust) |
-| S07 | [Chatbots forget](https://nursnaaz.github.io/tutorial/chatbots-forget) |
-| S09 / S11 | [ReAct, one tool](https://nursnaaz.github.io/tutorial/one-tool-one-loop) |
-| S10 | [Tiny RAG](https://nursnaaz.github.io/tutorial/tiny-rag) · [Chunking](https://nursnaaz.github.io/tutorial/chunking-intuition) · [Hybrid + RRF](https://nursnaaz.github.io/tutorial/hybrid-search-rrf) · [Citations](https://nursnaaz.github.io/tutorial/citations-and-refusals) · [RAG injection](https://nursnaaz.github.io/tutorial/rag-injection-guardrails) · [Production challenges](https://nursnaaz.github.io/tutorial/production-challenges) |
-| S10f | [Chat memory](https://nursnaaz.github.io/tutorial/chatbots-forget) |
-| S11 | [HITL](https://nursnaaz.github.io/tutorial/human-in-the-loop) · [MCP](https://nursnaaz.github.io/tutorial/mcp-as-usb) · [Securing agents](https://nursnaaz.github.io/tutorial/secured-agents) |
+| Session | Lab | Medium |
+|---|---|---|
+| S00 | [How search engines work](https://nursnaaz.github.io/tutorial/how-search-engines-work) | [TF-IDF / 100 students](https://medium.com/learning-data/how-i-taught-100-students-to-build-googles-core-algorithm-in-30-minutes-3166e6cc8636) |
+| S01 | [Cosine similarity & movie recommender](https://nursnaaz.github.io/tutorial/cosine-similarity-movie-recommender) | [Words don't have meaning](https://medium.com/generative-ai/words-dont-have-meaning-sentences-do-ef5b7745eac2) |
+| S02 | [Self-attention](https://nursnaaz.github.io/tutorial/self-attention) | [Computed by hand](https://medium.com/generative-ai/i-ran-the-math-that-powers-chatgpt-heres-what-i-found-2fc45eecec59) |
+| S02 | [Positional encoding](https://nursnaaz.github.io/tutorial/positional-encoding) | |
+| S02 | [Multi-head attention](https://nursnaaz.github.io/tutorial/multi-head-attention) | |
+| S02 | [Transformer code](https://nursnaaz.github.io/tutorial/transformer-code) | |
+| S03 | [BERT classification](https://nursnaaz.github.io/tutorial/bert-classification) | |
+| S04 | [Tokens / BPE](https://nursnaaz.github.io/tutorial/tokens-are-money) | [One word, two tokens](https://medium.com/@nursnaaz/one-word-two-tokens-here-is-how-bpe-builds-them-031f23614e65) |
+| S04 | [Sampling](https://nursnaaz.github.io/tutorial/sampling-temperature-topk-topp) | |
+| S04 | [Context window](https://nursnaaz.github.io/tutorial/context-window-budget) | |
+| S05 | [First LLM call](https://nursnaaz.github.io/tutorial/first-llm-call) | |
+| S05 | [Local vs cloud](https://nursnaaz.github.io/tutorial/local-vs-cloud) | |
+| S06 | [Zero-shot / few-shot / CoT](https://nursnaaz.github.io/tutorial/prompt-anatomy) | |
+| S06 | [JSON or bust](https://nursnaaz.github.io/tutorial/json-or-bust) | |
+| S07 | [Chatbots forget](https://nursnaaz.github.io/tutorial/chatbots-forget) | |
+| S09 / S11 | [ReAct, one tool](https://nursnaaz.github.io/tutorial/one-tool-one-loop) | |
+| S10 | [Tiny RAG](https://nursnaaz.github.io/tutorial/tiny-rag) | [The 30-day lie](https://medium.com/@nursnaaz/i-asked-chatgpt-about-our-gyms-refund-policy-it-invented-one-bbf28cdf7ecc) |
+| S10 | [Chunking](https://nursnaaz.github.io/tutorial/chunking-intuition) | |
+| S10 | [Hybrid + RRF](https://nursnaaz.github.io/tutorial/hybrid-search-rrf) | |
+| S10 | [Citations](https://nursnaaz.github.io/tutorial/citations-and-refusals) | |
+| S10 | [RAG injection](https://nursnaaz.github.io/tutorial/rag-injection-guardrails) | |
+| S10 | [Production challenges](https://nursnaaz.github.io/tutorial/production-challenges) | |
+| S10f | [Chat memory](https://nursnaaz.github.io/tutorial/chatbots-forget) | |
+| S11 | [HITL](https://nursnaaz.github.io/tutorial/human-in-the-loop) | |
+| S11 | [MCP](https://nursnaaz.github.io/tutorial/mcp-as-usb) | |
+| S11 | [Securing agents](https://nursnaaz.github.io/tutorial/secured-agents) | |
 
 | Session | Presentation |
 |---|---|
