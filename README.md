@@ -177,8 +177,6 @@ One numbered folder per weekend. Open that folder's README first. Class slides a
 
 S11 extra (separate repo, not in this clone): [Medium article agent](https://github.com/nursnaaz/medium-article-agent).
 
-If you still see [`03_GPT_1_2_3/`](./03_GPT_1_2_3/), skip it. The live session is [`03_GPT_Evolution_and_Alignment/`](./03_GPT_Evolution_and_Alignment/).
-
 ---
 
 ## 🗺️ Sessions shipped so far
@@ -578,6 +576,7 @@ Try: *“What is our refund policy?”* · *“How many open tickets does Jane D
 | **[RAG chatbot + memory](./10_RAG/notebooks/production_rag_chatbot_memory/)** | S10 / M06 | Streamlit, checkpointer / Store | Multi-turn support bot that remembers |
 | **[MCP helpdesk server](./10_RAG/notebooks/production_mcp_agents_rag_capstone/)** | S10 extra | MCP, SQL, RAG | Tools the S11 orchestrator actually calls |
 | **[Distill](./05_Local_LLMs_and_API_Providers/distill/)** | S05 | FastAPI, React, Whisper | Classroom assessment. [Contribute](https://github.com/nursnaaz/distill/blob/main/CONTRIBUTING.md) |
+| **[Provider race + map-reduce](./05_Local_LLMs_and_API_Providers/apps/)** | S05 | Streamlit | Same prompt to OpenAI, Gemini, Anthropic, Ollama and OpenRouter side by side, plus a long-document summariser |
 | **[CineMatch](./01_Text_to_Numbers/movie_recommender/)** | S01 | FastAPI, React | 5 embedders, same 1,000 movies |
 | **[Holmes GPT](./03_GPT_Evolution_and_Alignment/holmes_gpt_ui.py)** | S03 | PyTorch, Streamlit | A GPT you trained yourself |
 | **[Bullish Stock Scanner V3](https://github.com/nursnaaz/TechnicalStockPrediction/tree/feature/v3-high-precision)** | S09 | FastAPI, React, 308 tests | Spec-driven loop engineering, outside this repo |
