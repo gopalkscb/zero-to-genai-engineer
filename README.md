@@ -16,15 +16,15 @@
 
 **Real code · Real papers · Real datasets · Real apps · Built to get you hired**
 
-[Start here](#-start-here) · [Syllabus](#-full-syllabus-every-session) · [Presentations](https://nursnaaz.github.io/zero-to-genai-engineer/) · [S10 RAG](#s10--rag--memory--chatbots-m07--m08--m06) · [S11 LangGraph](#s11--langgraph-stateful-agents-m10) · [Projects](#-projects-you-can-ship)
+[Start here](#-start-here) · [Syllabus](#-full-syllabus-every-session) · [Presentations](https://nursnaaz.github.io/zero-to-genai-engineer/) · [S10 RAG](#s10--rag--memory--chatbots-m07--m08--m06) · [S11 LangGraph](#s11--langgraph-stateful-agents-m10) · [S12 Deep Agents](#s12--langchain-vs-langgraph-vs-deep-agents) · [Projects](#-projects-you-can-ship)
 
 </div>
 
 ---
 
-| 13 sessions | 57 notebooks | 12 research papers | 19 HTML decks |
+| 14 sessions | 58 notebooks | 12 research papers | 20 HTML decks |
 |:---:|:---:|:---:|:---:|
-| Pre-work → S11 | Colab-ready, commented | GPT-1 → DPO + Attention | Open in any browser |
+| Pre-work → S12 | Colab-ready, commented | GPT-1 → DPO + Attention | Open in any browser |
 | **9 industry RAG briefs** | **10 in-repo apps** | **18 RAG notebooks** | **5 LangGraph notebooks** |
 | Banking → insurance | Streamlit · FastAPI · React | Chunking → MCP helpdesk | Graphs · HITL · teams |
 
@@ -59,9 +59,11 @@ New sessions drop every **Saturday / Sunday**. Star the repo to get notified. Qu
 | **Ready for the course** | Open the next session folder. **The README inside is the start page.** Run notebooks in order. |
 | **On RAG + memory (S10)** | [`10_RAG/README.md`](./10_RAG/). Notebooks **01–12** are required. **11, 13, and 14** are the chatbot / memory track. |
 | **On LangGraph (S11)** | [`11_LangGraph/README.md`](./11_LangGraph/). Notebooks **01–03** required; **04–05** are bonus. |
+| **On Deep Agents (S12)** | [`12_deepagents/README.md`](./12_deepagents/). One notebook: files, `AGENT.md`, `SKILL.md`, your tools, subagents. |
+| **On the Dining Bot capstone (S13)** | [`13_Project_Implementation/README.md`](./13_Project_Implementation/). Spec + sample SQLite DB. |
 | **Want the slides** | [Class presentations](https://nursnaaz.github.io/zero-to-genai-engineer/). Open those links. Clicking the `.html` in GitHub just shows source. |
 | **Want a browser lab** | [nursnaaz.github.io](https://nursnaaz.github.io/). Direct URLs are listed under each session below. No API key. |
-| **Caught up through S11** | Ship something from [Projects](#-projects-you-can-ship). Chatbot memory is already in S10. |
+| **Caught up through S12** | Start [Dining Bot](./13_Project_Implementation/), or ship something from [Projects](#-projects-you-can-ship). |
 
 Beginner notebooks (no install):
 
@@ -104,19 +106,19 @@ Every weekend is notebooks you actually run. Most also leave you with an app, a 
 
 | Kind of material | Count | Where it lives |
 |---|---|---|
-| Weekend sessions (S00–S11) + pre-work | **13** | Numbered folders + [`prereq/`](./prereq/) |
-| Jupyter notebooks | **57** | Session `notebooks/`, 11 S03 paper summaries, 2 S10 student copies, plus the RAG Studio and agentic-RAG capstone notebooks. Ignore [`03_GPT_1_2_3/`](./03_GPT_1_2_3/) — leftover from an older layout. |
+| Weekend sessions (S00–S12) + pre-work | **14** | Numbered folders + [`prereq/`](./prereq/) |
+| Jupyter notebooks | **58** | Session `notebooks/`, 11 S03 paper summaries, 2 S10 student copies, plus the RAG Studio and agentic-RAG capstone notebooks. Ignore [`03_GPT_1_2_3/`](./03_GPT_1_2_3/) — leftover from an older layout. |
 | RAG teaching notebooks (01–16 + 2 student labs) | **18** | [`10_RAG/notebooks/`](./10_RAG/notebooks/) |
 | LangGraph teaching notebooks | **5** | [`11_LangGraph/notebooks/`](./11_LangGraph/notebooks/) (plus optional `self_correcting_rag.ipynb` in the capstone folder) |
 | Original research PDFs | **12** | S02 *Attention Is All You Need* + S03 GPT / BERT / alignment |
 | Beginner paper-summary notebooks | **11** | [`03_GPT_Evolution_and_Alignment/paper_summaries/`](./03_GPT_Evolution_and_Alignment/paper_summaries/) |
-| Classroom HTML decks | **19** | S03 papers (1) · S08 recap (2) · S10 (12) · S11 (4) |
+| Classroom HTML decks | **20** | S03 papers (1) · S08 recap (2) · S10 (12) · S11 (4) · S12 (1) |
 | PDF slide decks | S00 (3) · S01 (1) · S02 (1) · S05 (`slides.pdf`) | Each session's `slides/` |
 | Interactive browser tutorials | **25** | [nursnaaz.github.io](https://nursnaaz.github.io) — deep links next to each session |
 | Student group RAG datasets | **9 companies** | [`10_RAG/student_group_datasets/`](./10_RAG/student_group_datasets/) |
 | Shippable apps in this repo | **10** | See [Projects](#-projects-you-can-ship) |
 
-Quick naming trap: folder `10_RAG/` is session **S10**, which covers modules **M07 + M08 + M06** (memory went into the RAG chatbot, not its own weekend). `11_LangGraph/` is session **S11** = module **M10**.
+Quick naming trap: folder `10_RAG/` is session **S10**, which covers modules **M07 + M08 + M06** (memory went into the RAG chatbot, not its own weekend). `11_LangGraph/` is session **S11** = module **M10**. `12_deepagents/` is **S12**. `13_Project_Implementation/` is **S13** (Dining Bot).
 
 ---
 
@@ -136,7 +138,9 @@ S00  Search (TF-IDF)
                                      └─ S08 Recap (S00–S07 visual pass)
                                           └─ MISSING: AI that writes the code  ─►  S09  /goal · /loop
                                                └─ MISSING: YOUR documents  ─►  S10  RAG + memory + chatbots
-                                                    └─ MISSING: loops, pause, teams  ─►  S11  LangGraph  ← you are here
+                                                    └─ MISSING: loops, pause, teams  ─►  S11  LangGraph
+                                                         └─ MISSING: files, skills, subagents  ─►  S12  Deep Agents
+                                                              └─ MISSING: one product  ─►  S13  Dining Bot  ← you are here
 ```
 
 ---
@@ -174,6 +178,8 @@ One numbered folder per weekend. Open that folder's README first. Class slides a
 | [`09_AgenticCoding_LoopEngineering/`](./09_AgenticCoding_LoopEngineering/) | S09 | [`AGENTIC_CODING_GUIDE.md`](./09_AgenticCoding_LoopEngineering/AGENTIC_CODING_GUIDE.md) |
 | [`10_RAG/`](./10_RAG/) | S10 | **[Start here](./10_RAG/README.md)** — 16 teaching notebooks, apps, 9 group briefs |
 | [`11_LangGraph/`](./11_LangGraph/) | S11 | **[Start here](./11_LangGraph/README.md)** — 5 notebooks, helpdesk, agentic RAG |
+| [`12_deepagents/`](./12_deepagents/) | S12 | **[Start here](./12_deepagents/README.md)** — LangChain vs LangGraph vs Deep Agents |
+| [`13_Project_Implementation/`](./13_Project_Implementation/) | S13 | **[Start here](./13_Project_Implementation/README.md)** — Dining Bot spec + sample SQLite DB |
 
 S11 extra (separate repo, not in this clone): [Medium article agent](https://github.com/nursnaaz/medium-article-agent).
 
@@ -196,6 +202,8 @@ S11 extra (separate repo, not in this clone): [Medium article agent](https://git
 | [S09](./09_AgenticCoding_LoopEngineering/) | Agentic Coding | `/goal` vs `/loop` | Guides in the folder |
 | [S10](./10_RAG/) | RAG + Memory & Chatbots | Chunking → hybrid → RAGAS → chatbot with memory | [12 decks](https://nursnaaz.github.io/zero-to-genai-engineer/), also next to each notebook [below](#s10--rag--memory--chatbots-m07--m08--m06) |
 | [S11](./11_LangGraph/) | LangGraph | Graphs, HITL, helpdesk, ReAct→ToT, SQL | [4 decks](https://nursnaaz.github.io/zero-to-genai-engineer/), also next to each day [below](#s11--langgraph-stateful-agents-m10) |
+| [S12](./12_deepagents/) | Deep Agents | Chat vs files, `AGENT.md`, `SKILL.md` | [Food-delivery deck](https://nursnaaz.github.io/zero-to-genai-engineer/12_deepagents/notebooks/teaching_decks/teach_01_why_deep_agents.html) |
+| [S13](./13_Project_Implementation/) | Dining Bot capstone | Spec + sample DB — RAG, read-only SQL, HITL, Weather + Chart MCP | |
 
 ---
 
@@ -568,11 +576,44 @@ Try: *“What is our refund policy?”* · *“How many open tickets does Jane D
 
 ---
 
+### S12 — LangChain vs LangGraph vs Deep Agents
+
+> **MISSING from S11:** LangChain talks. LangGraph is steps you wrote. Deep Agents is that graph with file tools, `AGENT.md`, `SKILL.md`, your tools, and helpers already attached — so “also add eggs” is not a new Python node.
+
+**Start page:** [`12_deepagents/README.md`](./12_deepagents/) · [notebook](./12_deepagents/notebooks/01_langchain_langgraph_deepagents.ipynb) · [slides](https://nursnaaz.github.io/zero-to-genai-engineer/12_deepagents/notebooks/teaching_decks/teach_01_why_deep_agents.html)
+
+| # | What you run | Proof |
+|---|---|---|
+| LangChain cell | Shopping list in chat | No `files` |
+| LangGraph cell | `write_list` → stop | No `add_eggs` node |
+| Ex 1 | `shopping.md` then add eggs | File tools |
+| Ex 2 | `AGENT.md` | “Gulf Mart” not in the user prompt |
+| Ex 3 | `SKILL.md` | `INV-001` from the how-to |
+| Ex 4 | `get_store_hours` → `hours.md` | Your tool + `write_file` |
+| Ex 5 | `price-lister` helper | Empty-chat subagent |
+
+**API:** `create_deep_agent` · `memory=` · `skills=` · `tools=` · `subagents=` · `write_file` (built in).
+
+---
+
+### S13 — Dining Bot (capstone)
+
+> **MISSING from S12:** a product. Dining Bot is one restaurant-manager chat: RAG over policies, read-only SQL over orders, two MCP servers (weather + charts), and **add menu item** only after HITL. The LLM proposes; code validates and executes.
+
+**Start page:** [`13_Project_Implementation/README.md`](./13_Project_Implementation/) · [requirement (docx)](./13_Project_Implementation/Dining_Bot_Requirement_v1.1.docx) · [sample DB notes](./13_Project_Implementation/README_DATABASE.md)
+
+```bash
+cd 13_Project_Implementation
+python3 build_db.py
+```
+
+---
+
 ## 🏗️ Projects you can ship
 
 | Project | Session | Stack | What it is |
 |---|---|---|---|
-| **[Helpdesk Orchestrator](./11_LangGraph/multi_agent_orchestrator/)** | S11c | LangGraph, Streamlit, MCP | Hierarchical teams, RAG + SQL, write-tools that pause |
+| **[Dining Bot](./13_Project_Implementation/)** | S13 | LangGraph, RAG, SQLite, MCP, HITL | Capstone spec + sample DB. You implement the assistant. |
 | **[Self-Correcting Agentic RAG](./11_LangGraph/capstone_agentic_rag/)** | S11 extra | LangGraph, RAGAS, Streamlit | Grade → rewrite → groundedness loop → escalate |
 | **[Medium Article Agent](https://github.com/nursnaaz/medium-article-agent)** | S11 extra | LangGraph, FastAPI, React | Ingest PDF/PPTX/HTML → draft → 6 reviewers → HITL → Markdown. Separate repo — not in this clone. |
 | **[RAG Studio](./10_RAG/capstone_rag_studio/)** | S10 | FastAPI, React, RAGAS, DeepEval | Swap retrieval strategies and compare scores. [Eval slides](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/capstone_rag_studio/reports/rag_strategy_evaluation_presentation.html) |
@@ -699,8 +740,9 @@ S00–S11 browser labs (no API key) live on [nursnaaz.github.io](https://nursnaa
 | S11b | [Human-in-the-loop](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_02_human_in_the_loop.html) |
 | S11d | [Reasoning patterns](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_04_agent_reasoning_patterns.html) |
 | S11e | [SQL agent](https://nursnaaz.github.io/zero-to-genai-engineer/11_LangGraph/notebooks/teaching_decks/teach_05_sql_agent.html) |
+| S12 | [Why Deep Agents](https://nursnaaz.github.io/zero-to-genai-engineer/12_deepagents/notebooks/teaching_decks/teach_01_why_deep_agents.html) |
 
-S04, S06, S07, S09, S10e, and S10g are notebook- or guide-led. S11c is the [Streamlit orchestrator](./11_LangGraph/multi_agent_orchestrator/).
+S04, S06, S07, S09, S10e, and S10g are notebook- or guide-led. S11c is the [Streamlit orchestrator](./11_LangGraph/multi_agent_orchestrator/). S13 is the [Dining Bot spec](./13_Project_Implementation/).
 
 ---
 
@@ -723,7 +765,7 @@ S04, S06, S07, S09, S10e, and S10g are notebook- or guide-led. S11c is the [Stre
 | Eval | RAGAS · DeepEval | S10e |
 | Memory | Checkpointer · token trim · summarisation · `Store` · condense-question | **S10f (M06)** |
 | Guardrails | Input/output screens, groundedness refusal, healthcare diagnosis refusal | [NB11](./10_RAG/notebooks/11_production_ready_chatbots.ipynb), [healthcare brief](./10_RAG/student_group_datasets/05_healthcare/) |
-| Agents / graphs | LangGraph · MCP · `create_supervisor` | [NB16](./10_RAG/notebooks/16_capstone_mcp_agents_rag.ipynb), S11 |
+| Agents / graphs | LangGraph · MCP · `create_supervisor` · Deep Agents | [NB16](./10_RAG/notebooks/16_capstone_mcp_agents_rag.ipynb), S11, [S12](./12_deepagents/) |
 | LlamaIndex | Chunking (same ideas as LangChain NB02) | [NB03](./10_RAG/notebooks/03_ingestion_and_chunking_llamaindex.ipynb) |
 | UI / deploy | Streamlit · FastAPI · React · Docker Compose | S01+ · [Medium article agent](https://github.com/nursnaaz/medium-article-agent) |
 
@@ -733,7 +775,7 @@ S04, S06, S07, S09, S10e, and S10g are notebook- or guide-led. S11c is the [Stre
 
 | Status | Modules |
 |---|---|
-| ✅ **Shipped in this repo** | **M00–M10 · M12 · M15 · M16 · M18 · M20** (sessions **S00–S11**) |
+| ✅ **Shipped in this repo** | **M00–M10 · M12 · M15 · M16 · M18 · M20** (sessions **S00–S12**) |
 | ✅ **M06 Memory & Chatbots** | Also done in **S10** (notebooks 11, 13, 14) |
 | ✅ **M09 LangChain Agents** | Also done in **S11a** (`ToolNode`, `create_agent`, ReAct) |
 | 🔜 **Still ahead** | CrewAI · dedicated document/code modules · LLMOps · LoRA · business capstone |
@@ -761,7 +803,7 @@ S04, S06, S07, S09, S10e, and S10g are notebook- or guide-led. S11c is the [Stre
 | M18 | Guardrails & safety | [NB11](./10_RAG/notebooks/11_production_ready_chatbots.ipynb) · [production chatbot](./10_RAG/notebooks/production_rag_chatbot/) · [healthcare brief](./10_RAG/student_group_datasets/05_healthcare/) (must refuse diagnosis) | [Production chatbots](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_11_production_chatbots.html) | ✅ |
 | M19 | Fine-tuning (LoRA / QLoRA) | S03 DPO paper is the theory | | 🔜 |
 | M20 | LlamaIndex | [NB03](./10_RAG/notebooks/03_ingestion_and_chunking_llamaindex.ipynb) | [LlamaIndex chunking](https://nursnaaz.github.io/zero-to-genai-engineer/10_RAG/notebooks/teaching_decks/teach_03_ingestion_chunking_llamaindex.html) | ✅ |
-| M21–M22 | Domain + business capstone | [9 RAG group briefs](./10_RAG/student_group_datasets/) are the rehearsal | | 🔜 |
+| M21–M22 | Domain + business capstone | [Dining Bot](./13_Project_Implementation/) is the build; [9 RAG group briefs](./10_RAG/student_group_datasets/) were the rehearsal | | 🚧 S13 |
 
 ---
 
@@ -772,6 +814,8 @@ S04, S06, S07, S09, S10e, and S10g are notebook- or guide-led. S11c is the [Stre
 
 | Date | What shipped |
 |---|---|
+| 2026-08-29 | **S13** — Dining Bot capstone brief (v1.1) + sample SQLite DB |
+| 2026-08-28 | **S12** — LangChain vs LangGraph vs Deep Agents (files, `AGENT.md`, `SKILL.md`) |
 | 2026-08-23 | **S11d–e** — reasoning patterns + SQL agent. Portfolio: [medium-article-agent](https://github.com/nursnaaz/medium-article-agent) |
 | 2026-08-22 | **S11b–c** — HITL notebook; hierarchical helpdesk orchestrator |
 | 2026-08-15 | **S11a** — LangGraph fundamentals & agents |
