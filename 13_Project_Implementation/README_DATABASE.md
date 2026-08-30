@@ -46,7 +46,7 @@ flag actually means something.
 | `orders` | ~1,370 | Order headers. `status` is paid / open / cancelled. Drives revenue analytics. |
 | `order_items` | ~3,900 | Line items. Drives top-item and category analytics. |
 | `payments` | ~1,240 | One per paid order; a few refunds. Method = card / upi / cash / wallet. |
-| `documents` | 10 | RAG corpus — real policy / SOP / menu chunks. `embedding` is NULL until you ingest. |
+| `documents` | 47 | RAG corpus — policy / SOP chunks from `sample_docs/*.md` (11 files). `embedding` is NULL until ingested. |
 | `audit_log` | 3 | Sample rows showing the HITL write lifecycle: `actor_id, action, payload, approval_status, approved_by, approved_at, executed_at` (2 approved+executed, 1 rejected with NULL approver/exec). |
 
 ## The two design rules baked into the data

@@ -1,0 +1,53 @@
+{
+  "ok": true,
+  "restaurant": {
+    "lat": 25.2048,
+    "lon": 55.2708,
+    "tz": "Asia/Dubai"
+  },
+  "forecast": [
+    {
+      "date": "2026-08-30",
+      "temp_max_c": 42.5,
+      "temp_min_c": 28.4,
+      "precip_prob_max": 0
+    },
+    {
+      "date": "2026-08-31",
+      "temp_max_c": 42.3,
+      "temp_min_c": 30.0,
+      "precip_prob_max": 0
+    },
+    {
+      "date": "2026-09-01",
+      "temp_max_c": 38.1,
+      "temp_min_c": 29.5,
+      "precip_prob_max": 0
+    },
+    {
+      "date": "2026-09-02",
+      "temp_max_c": 39.6,
+      "temp_min_c": 29.7,
+      "precip_prob_max": 0
+    },
+    {
+      "date": "2026-09-03",
+      "temp_max_c": 36.7,
+      "temp_min_c": 31.7,
+      "precip_prob_max": 0
+    },
+    {
+      "date": "2026-09-04",
+      "temp_max_c": 39.1,
+      "temp_min_c": 31.1,
+      "precip_prob_max": 5
+    },
+    {
+      "date": "2026-09-05",
+      "temp_max_c": 38.4,
+      "temp_min_c": 32.4,
+      "precip_prob_max": 3
+    }
+  ],
+  "cached_at": "2026-08-30T07:01:39.505289+04:00"
+}

@@ -1,6 +1,59 @@
-import sqlite3, os, random, datetime as dt
+import sqlite3, os, random, datetime as dt, re
+from pathlib import Path
 
-DB = "/home/claude/dining_bot.db"
+# Write next to this script (not a machine-local absolute path).
+DB = str(Path(__file__).resolve().parent / "dining_bot.db")
+SAMPLE_DOCS = Path(__file__).resolve().parent / "sample_docs"
+
+# Default last_updated per source file (edit when policies change).
+DOC_DATES = {
+    "discount_policy.md": "2026-06-15",
+    "refund_policy.md": "2026-07-01",
+    "employee_handbook.md": "2026-05-20",
+    "food_safety_sop.md": "2026-04-10",
+    "menu_description_guide.md": "2026-06-01",
+    "opening_hours_policy.md": "2026-03-01",
+    "inventory_and_reordering_sop.md": "2026-05-01",
+    "delivery_and_takeaway_policy.md": "2026-06-10",
+    "loyalty_program.md": "2026-06-01",
+    "patio_and_seating_policy.md": "2026-05-15",
+    "payment_methods_policy.md": "2026-04-20",
+}
+
+
+def load_documents_from_sample_docs(sample_dir: Path) -> list[tuple[str, str, str, str, str]]:
+    """Parse sample_docs/*.md → (name, section, version, last_updated, chunk)."""
+    if not sample_dir.is_dir():
+        raise FileNotFoundError(f"Missing sample docs folder: {sample_dir}")
+
+    docs: list[tuple[str, str, str, str, str]] = []
+    for md_path in sorted(sample_dir.glob("*.md")):
+        text = md_path.read_text(encoding="utf-8")
+        doc_name = md_path.stem.replace("_", " ").title().replace(" And ", " and ")
+        # Title line overrides filename: "# Discount Policy"
+        for line in text.splitlines():
+            if line.startswith("# "):
+                doc_name = line[2:].strip()
+                break
+
+        last_updated = DOC_DATES.get(md_path.name, "2026-06-01")
+        blocks = re.split(r"^## ", text, flags=re.MULTILINE)
+        for block in blocks[1:]:
+            header, _, body = block.partition("\n")
+            header = header.strip()
+            m = re.match(r"(.+?)\s*\(v(\d+\.\d+)\)", header, flags=re.I)
+            if m:
+                section, version = m.group(1).strip(), f"v{m.group(2)}"
+            else:
+                section, version = header, "v1.0"
+            chunk = body.strip()
+            if chunk:
+                docs.append((doc_name, section, version, last_updated, chunk))
+
+    if not docs:
+        raise RuntimeError(f"No document chunks parsed from {sample_dir}")
+    return docs
+
 if os.path.exists(DB):
     os.remove(DB)
 
@@ -326,55 +379,15 @@ for d in range(61):
 con.commit()
 
 # ------------------------------------------------------------------
-# DOCUMENTS  (RAG corpus - real chunks the Knowledge subgraph retrieves)
-# embedding left NULL: the team fills it during ingestion
+# DOCUMENTS  (RAG corpus — loaded from sample_docs/*.md)
+# embedding left NULL: the app fills it during ingestion
 # ------------------------------------------------------------------
-docs = [
-    ("Discount Policy", "Manager limits", "v1.2", "2026-06-15",
-     "Restaurant managers may apply a discount of up to 15% on the order subtotal without "
-     "further approval. Discounts between 16% and 25% require approval from the shift "
-     "supervisor. Any discount above 25% must be authorised by the owner in writing."),
-    ("Discount Policy", "Promotions", "v1.2", "2026-06-15",
-     "Standard promotional discounts are 5%, 10% and 15%. Promotions cannot be combined "
-     "with loyalty rewards on the same bill. Complimentary items are not treated as "
-     "discounts and must be recorded separately."),
-    ("Refund Policy", "Eligibility", "v2.0", "2026-07-01",
-     "A full refund is issued when an order is cancelled before preparation begins. Once "
-     "food preparation has started, only a partial refund covering undelivered items is "
-     "permitted. Quality complaints are refunded at the manager's discretion up to the "
-     "value of the affected items."),
-    ("Refund Policy", "Method", "v2.0", "2026-07-01",
-     "Refunds are returned to the original payment method. Card refunds may take three to "
-     "five business days. Cash refunds are given immediately from the till and must be "
-     "logged in the audit record with the manager's name."),
-    ("Employee Handbook", "Shift timings", "v3.1", "2026-05-20",
-     "The restaurant operates two shifts. The morning shift runs from 10:00 to 16:00 and "
-     "the evening shift from 16:00 to 24:00. Staff are entitled to a 30-minute break per "
-     "shift and a minimum of 11 hours rest between shifts."),
-    ("Employee Handbook", "Leave", "v3.1", "2026-05-20",
-     "Employees accrue two days of paid leave per month. Leave requests must be submitted "
-     "at least seven days in advance except in emergencies. No more than two kitchen staff "
-     "may be on leave on the same day."),
-    ("Food Safety SOP", "Storage", "v1.0", "2026-04-10",
-     "Raw meat must be stored below 4 degrees Celsius and kept separate from vegetables and "
-     "cooked food. Every storage container must be labelled with the date of receipt. Stock "
-     "is rotated on a first-in first-out basis."),
-    ("Food Safety SOP", "Allergens", "v1.0", "2026-04-10",
-     "Common allergens on the menu include dairy, nuts and shellfish. Dishes containing "
-     "paneer, butter, cream or milk carry dairy. Prawn Koliwada and Fish Curry contain "
-     "shellfish or fish. Staff must inform guests of allergens on request."),
-    ("Menu Description Guide", "Signature dishes", "v1.1", "2026-06-01",
-     "Butter Chicken is the restaurant's signature dish, made with overnight-marinated "
-     "tandoori chicken in a tomato and butter gravy. Chicken Biryani follows the Hyderabadi "
-     "dum style where rice and meat are sealed and slow-cooked together."),
-    ("Opening Hours Policy", "Service hours", "v1.0", "2026-03-01",
-     "The restaurant is open daily from 12:00 noon to 23:00. Last orders for the kitchen are "
-     "taken at 22:30. The restaurant remains closed on the first of January each year."),
-]
+docs = load_documents_from_sample_docs(SAMPLE_DOCS)
 for name, section, version, updated, chunk in docs:
     cur.execute("""INSERT INTO documents
         (name, section, version, last_updated, chunk, embedding)
         VALUES (?,?,?,?,?,NULL)""", (name, section, version, updated, chunk))
+print(f"  Loaded {len(docs)} document chunks from {SAMPLE_DOCS.name}/")
 
 # ------------------------------------------------------------------
 # AUDIT LOG  (a few sample rows so the shape is clear)
