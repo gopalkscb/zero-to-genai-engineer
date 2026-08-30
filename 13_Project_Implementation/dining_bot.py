@@ -27,7 +27,7 @@ Optional MCP children:
   python3 dining_bot.py --mcp chart
 
 Requirement: Dining_Bot_Requirement_v1.1.docx
-Sample policies: sample_docs/*.md · Standing rules: AGENT.md · Skill: skills/
+Sample policies: `sample_docs/{docx,xlsx,pptx,pdf}/` · Plans: `plans/`
 ================================================================================
 """
 
@@ -264,7 +264,8 @@ class DiningRAG:
         con = connect_readonly()
         try:
             rows = con.execute(
-                "SELECT id, name, section, version, chunk FROM documents ORDER BY id"
+                "SELECT id, name, section, version, chunk, source_type, source_file "
+                "FROM documents ORDER BY id"
             ).fetchall()
         finally:
             con.close()
@@ -312,10 +313,15 @@ class DiningRAG:
 
 # Citations are built HERE in Python — never by the LLM inventing sources (FR-8).
 def format_citations(hits: list[dict[str, Any]]) -> list[str]:
-    return [
-        f"{h['name']} · {h['section']} · {h['version']} (score={h['score']:.2f})"
-        for h in hits
-    ]
+    cites = []
+    for h in hits:
+        src = h.get("source_type") or "md"
+        file = h.get("source_file") or "unknown"
+        cites.append(
+            f"{h['name']} · {h['section']} · {h['version']} · "
+            f"{src}:{file} (score={h['score']:.2f})"
+        )
+    return cites
 
 
 # =============================================================================
@@ -681,6 +687,8 @@ def make_planning_tools(rag: DiningRAG):
                         "name": h["name"],
                         "section": h["section"],
                         "version": h["version"],
+                        "source_type": h.get("source_type"),
+                        "source_file": h.get("source_file"),
                         "score": h["score"],
                         "chunk": h["chunk"],
                     }
@@ -912,7 +920,8 @@ def knowledge_node(state: BotState, rag: DiningRAG) -> dict:
         }
     cites = format_citations(hits)
     context = "\n\n".join(
-        f"[{i+1}] {h['name']} / {h['section']} (v{h['version']})\n{h['chunk']}"
+        f"[{i+1}] {h['name']} / {h['section']} "
+        f"({h.get('source_type', 'md')}:{h.get('source_file', '?')})\n{h['chunk']}"
         for i, h in enumerate(hits)
     )
     llm = get_llm()
@@ -1373,7 +1382,7 @@ with st.sidebar:
             st.session_state._force_q = d
     st.divider()
     st.markdown(
-        "Policies: `sample_docs/` · Plans: `plans/` · "
+        "Policies: `sample_docs/docx|xlsx|pptx|pdf/` · Plans: `plans/` · "
         "`AGENT.md` + `skills/` for PLANNING. Rebuild DB: `python3 build_db.py`."
     )
 

@@ -1,58 +1,28 @@
-import sqlite3, os, random, datetime as dt, re
+import sqlite3, os, random, datetime as dt, sys, subprocess
 from pathlib import Path
 
 # Write next to this script (not a machine-local absolute path).
 DB = str(Path(__file__).resolve().parent / "dining_bot.db")
-SAMPLE_DOCS = Path(__file__).resolve().parent / "sample_docs"
-
-# Default last_updated per source file (edit when policies change).
-DOC_DATES = {
-    "discount_policy.md": "2026-06-15",
-    "refund_policy.md": "2026-07-01",
-    "employee_handbook.md": "2026-05-20",
-    "food_safety_sop.md": "2026-04-10",
-    "menu_description_guide.md": "2026-06-01",
-    "opening_hours_policy.md": "2026-03-01",
-    "inventory_and_reordering_sop.md": "2026-05-01",
-    "delivery_and_takeaway_policy.md": "2026-06-10",
-    "loyalty_program.md": "2026-06-01",
-    "patio_and_seating_policy.md": "2026-05-15",
-    "payment_methods_policy.md": "2026-04-20",
-}
+HERE = Path(__file__).resolve().parent
+SAMPLE_DOCS = HERE / "sample_docs"
 
 
-def load_documents_from_sample_docs(sample_dir: Path) -> list[tuple[str, str, str, str, str]]:
-    """Parse sample_docs/*.md → (name, section, version, last_updated, chunk)."""
-    if not sample_dir.is_dir():
-        raise FileNotFoundError(f"Missing sample docs folder: {sample_dir}")
+def ensure_sample_doc_files() -> None:
+    """Generate docx/xlsx/pptx/pdf corpus if missing (first clone / fresh setup)."""
+    has_any = any(
+        list((SAMPLE_DOCS / sub).glob("*"))
+        for sub in ("docx", "xlsx", "pptx", "pdf")
+        if (SAMPLE_DOCS / sub).is_dir()
+    )
+    if not has_any:
+        print("  sample_docs/ empty — running generate_sample_docs.py …")
+        subprocess.run([sys.executable, str(HERE / "generate_sample_docs.py")], check=True)
 
-    docs: list[tuple[str, str, str, str, str]] = []
-    for md_path in sorted(sample_dir.glob("*.md")):
-        text = md_path.read_text(encoding="utf-8")
-        doc_name = md_path.stem.replace("_", " ").title().replace(" And ", " and ")
-        # Title line overrides filename: "# Discount Policy"
-        for line in text.splitlines():
-            if line.startswith("# "):
-                doc_name = line[2:].strip()
-                break
 
-        last_updated = DOC_DATES.get(md_path.name, "2026-06-01")
-        blocks = re.split(r"^## ", text, flags=re.MULTILINE)
-        for block in blocks[1:]:
-            header, _, body = block.partition("\n")
-            header = header.strip()
-            m = re.match(r"(.+?)\s*\(v(\d+\.\d+)\)", header, flags=re.I)
-            if m:
-                section, version = m.group(1).strip(), f"v{m.group(2)}"
-            else:
-                section, version = header, "v1.0"
-            chunk = body.strip()
-            if chunk:
-                docs.append((doc_name, section, version, last_updated, chunk))
+def load_documents_from_sample_docs(sample_dir: Path):
+    from sample_doc_loader import load_all_sample_docs
 
-    if not docs:
-        raise RuntimeError(f"No document chunks parsed from {sample_dir}")
-    return docs
+    return load_all_sample_docs(sample_dir)
 
 if os.path.exists(DB):
     os.remove(DB)
@@ -140,6 +110,8 @@ CREATE TABLE documents (
     version       TEXT    NOT NULL,          -- e.g. "v1.2"
     last_updated  TEXT    NOT NULL,
     chunk         TEXT    NOT NULL,          -- the retrievable text chunk
+    source_type   TEXT    NOT NULL DEFAULT 'md',  -- docx, xlsx, pptx, pdf, csv, md, ...
+    source_file   TEXT,                      -- original filename e.g. Promo_Calendar.xlsx
     embedding     TEXT                       -- JSON array placeholder, NULL until ingested
 );
 
@@ -379,14 +351,17 @@ for d in range(61):
 con.commit()
 
 # ------------------------------------------------------------------
-# DOCUMENTS  (RAG corpus — loaded from sample_docs/*.md)
-# embedding left NULL: the app fills it during ingestion
+# DOCUMENTS  (RAG corpus — docx / xlsx / pptx / pdf in sample_docs/)
 # ------------------------------------------------------------------
+ensure_sample_doc_files()
 docs = load_documents_from_sample_docs(SAMPLE_DOCS)
-for name, section, version, updated, chunk in docs:
-    cur.execute("""INSERT INTO documents
-        (name, section, version, last_updated, chunk, embedding)
-        VALUES (?,?,?,?,?,NULL)""", (name, section, version, updated, chunk))
+for name, section, version, updated, chunk, source_type, source_file in docs:
+    cur.execute(
+        """INSERT INTO documents
+        (name, section, version, last_updated, chunk, source_type, source_file, embedding)
+        VALUES (?,?,?,?,?,?,?,NULL)""",
+        (name, section, version, updated, chunk, source_type, source_file),
+    )
 print(f"  Loaded {len(docs)} document chunks from {SAMPLE_DOCS.name}/")
 
 # ------------------------------------------------------------------

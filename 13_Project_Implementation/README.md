@@ -15,7 +15,8 @@
 | [`dining_bot.py`](./dining_bot.py) | **Teach this one file** top → bottom (SECTION 0→8) |
 | [`AGENT.md`](./AGENT.md) | Standing rules for the PLANNING harness |
 | [`skills/weekly-ops-plan/SKILL.md`](./skills/weekly-ops-plan/SKILL.md) | On-demand skill for weekly ops plans |
-| [`sample_docs/`](./sample_docs/) | 11 policy markdown files → RAG corpus (auto-loaded by `build_db.py`) |
+| [`sample_docs/`](./sample_docs/) | **Real files:** `docx/`, `xlsx/`, `pptx/`, `pdf/` — parsed by `build_db.py` (M11-style) |
+| [`generate_sample_docs.py`](./generate_sample_docs.py) | Regenerates the multi-format corpus |
 | [`Dining_Bot_Requirement_v1.1.docx`](./Dining_Bot_Requirement_v1.1.docx) | The full spec |
 | [`build_db.py`](./build_db.py) | Rebuilds `dining_bot.db` (`random.seed(42)`) |
 | [`requirements.txt`](./requirements.txt) | Pins (needs **Python ≥3.11**) |
@@ -27,10 +28,10 @@ cd 13_Project_Implementation
 python3.11 -m venv .venv          # deepagents needs 3.11+
 source .venv/bin/activate
 pip install -r requirements.txt
-python build_db.py                # once
+python generate_sample_docs.py    # docx/xlsx/pptx/pdf (build_db auto-runs if missing)
+python build_db.py
 # OPENAI_API_KEY in ../10_RAG/.env (or a local .env)
 streamlit run dining_bot.py
-# If you see torchvision errors after an old install: pip install torchvision
 ```
 
 Optional MCP children (same file):

@@ -23,31 +23,7 @@
       "temp_max_c": 38.1,
       "temp_min_c": 29.5,
       "precip_prob_max": 0
-    },
-    {
-      "date": "2026-09-02",
-      "temp_max_c": 39.6,
-      "temp_min_c": 29.7,
-      "precip_prob_max": 0
-    },
-    {
-      "date": "2026-09-03",
-      "temp_max_c": 36.7,
-      "temp_min_c": 31.7,
-      "precip_prob_max": 0
-    },
-    {
-      "date": "2026-09-04",
-      "temp_max_c": 39.1,
-      "temp_min_c": 31.1,
-      "precip_prob_max": 5
-    },
-    {
-      "date": "2026-09-05",
-      "temp_max_c": 38.4,
-      "temp_min_c": 32.4,
-      "precip_prob_max": 3
     }
   ],
-  "cached_at": "2026-08-30T07:01:39.505289+04:00"
+  "cached_at": "2026-08-30T07:16:45.390724+04:00"
 }
